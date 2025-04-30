@@ -1,0 +1,3 @@
+/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles/CGPraktikum.dir
+/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles/edit_cache.dir
+/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles/rebuild_cache.dir
