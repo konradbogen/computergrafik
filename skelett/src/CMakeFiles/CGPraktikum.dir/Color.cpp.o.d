@@ -1,3 +1,3 @@
 CMakeFiles/CGPraktikum.dir/Color.cpp.o: \
-  /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Color.cpp \
-  /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Color.hpp
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Color.cpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Color.hpp

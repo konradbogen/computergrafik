@@ -37,9 +37,24 @@ int main(int argc, char **argv) {
 
   /* Aufgabenblatt 1: Instanziieren Sie einen WireframeRenderer */
   WireframeRenderer wireframeRenderer(scene, img);
-  wireframeRenderer.renderScene(Color(0.0, 0.0, 0.0));
+
 
   /* Aufgabenblatt 1, Aufgabe 2: Testen Sie Ihre drawBresenhamLine-Methode hier */
+  GLPoint c = GLPoint(img->getWidth() / 2.0, img->getHeight() / 2.0, 0.0);
+  Color color = Color(0.0, 0.0, 0.0);
+  double dx = 50;
+  double dy = 70;
+  double cx = img->getWidth() / 2.0;
+  double cy = img->getHeight() / 2.0;
+  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx + dx, cy + dy, 0), color);
+  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx + dy, cy + dx, 0), color);
+  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx  -dx, cy + dy, 0), color);
+  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx + dy, cy -dx, 0), color);
+  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx + dx, cy -dy, 0), color);
+  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx -dy, cy+dx, 0), color);
+  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx-dx, cy-dy, 0), color);
+  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx-dy, cy-dx, 0), color);
+  wireframeRenderer.renderScene(color);
 
   /* Aufgabenblatt 1, Aufgabe 3: Testen Sie Ihre seedFillArea-Methode hier */  
 

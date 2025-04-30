@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett
+CMAKE_SOURCE_DIR = /Users/konradbogen/Documents/GitHub/computergrafik/skelett
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src
+CMAKE_BINARY_DIR = /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src
 
 # Include any dependencies generated for this target.
 include CMakeFiles/CGPraktikum.dir/depend.make
@@ -75,170 +75,170 @@ CMakeFiles/CGPraktikum.dir/codegen:
 CMakeFiles/CGPraktikum.dir/Camera.cpp.o: CMakeFiles/CGPraktikum.dir/flags.make
 CMakeFiles/CGPraktikum.dir/Camera.cpp.o: Camera.cpp
 CMakeFiles/CGPraktikum.dir/Camera.cpp.o: CMakeFiles/CGPraktikum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CGPraktikum.dir/Camera.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/Camera.cpp.o -MF CMakeFiles/CGPraktikum.dir/Camera.cpp.o.d -o CMakeFiles/CGPraktikum.dir/Camera.cpp.o -c /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CGPraktikum.dir/Camera.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/Camera.cpp.o -MF CMakeFiles/CGPraktikum.dir/Camera.cpp.o.d -o CMakeFiles/CGPraktikum.dir/Camera.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Camera.cpp
 
 CMakeFiles/CGPraktikum.dir/Camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CGPraktikum.dir/Camera.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Camera.cpp > CMakeFiles/CGPraktikum.dir/Camera.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Camera.cpp > CMakeFiles/CGPraktikum.dir/Camera.cpp.i
 
 CMakeFiles/CGPraktikum.dir/Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CGPraktikum.dir/Camera.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Camera.cpp -o CMakeFiles/CGPraktikum.dir/Camera.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Camera.cpp -o CMakeFiles/CGPraktikum.dir/Camera.cpp.s
 
 CMakeFiles/CGPraktikum.dir/Color.cpp.o: CMakeFiles/CGPraktikum.dir/flags.make
 CMakeFiles/CGPraktikum.dir/Color.cpp.o: Color.cpp
 CMakeFiles/CGPraktikum.dir/Color.cpp.o: CMakeFiles/CGPraktikum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CGPraktikum.dir/Color.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/Color.cpp.o -MF CMakeFiles/CGPraktikum.dir/Color.cpp.o.d -o CMakeFiles/CGPraktikum.dir/Color.cpp.o -c /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Color.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CGPraktikum.dir/Color.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/Color.cpp.o -MF CMakeFiles/CGPraktikum.dir/Color.cpp.o.d -o CMakeFiles/CGPraktikum.dir/Color.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Color.cpp
 
 CMakeFiles/CGPraktikum.dir/Color.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CGPraktikum.dir/Color.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Color.cpp > CMakeFiles/CGPraktikum.dir/Color.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Color.cpp > CMakeFiles/CGPraktikum.dir/Color.cpp.i
 
 CMakeFiles/CGPraktikum.dir/Color.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CGPraktikum.dir/Color.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Color.cpp -o CMakeFiles/CGPraktikum.dir/Color.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Color.cpp -o CMakeFiles/CGPraktikum.dir/Color.cpp.s
 
 CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.o: CMakeFiles/CGPraktikum.dir/flags.make
 CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.o: GLMatrix.cpp
 CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.o: CMakeFiles/CGPraktikum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.o -MF CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.o.d -o CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.o -c /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/GLMatrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.o -MF CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.o.d -o CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLMatrix.cpp
 
 CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/GLMatrix.cpp > CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLMatrix.cpp > CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.i
 
 CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/GLMatrix.cpp -o CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLMatrix.cpp -o CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.s
 
 CMakeFiles/CGPraktikum.dir/GLPoint.cpp.o: CMakeFiles/CGPraktikum.dir/flags.make
 CMakeFiles/CGPraktikum.dir/GLPoint.cpp.o: GLPoint.cpp
 CMakeFiles/CGPraktikum.dir/GLPoint.cpp.o: CMakeFiles/CGPraktikum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CGPraktikum.dir/GLPoint.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/GLPoint.cpp.o -MF CMakeFiles/CGPraktikum.dir/GLPoint.cpp.o.d -o CMakeFiles/CGPraktikum.dir/GLPoint.cpp.o -c /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/GLPoint.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CGPraktikum.dir/GLPoint.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/GLPoint.cpp.o -MF CMakeFiles/CGPraktikum.dir/GLPoint.cpp.o.d -o CMakeFiles/CGPraktikum.dir/GLPoint.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLPoint.cpp
 
 CMakeFiles/CGPraktikum.dir/GLPoint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CGPraktikum.dir/GLPoint.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/GLPoint.cpp > CMakeFiles/CGPraktikum.dir/GLPoint.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLPoint.cpp > CMakeFiles/CGPraktikum.dir/GLPoint.cpp.i
 
 CMakeFiles/CGPraktikum.dir/GLPoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CGPraktikum.dir/GLPoint.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/GLPoint.cpp -o CMakeFiles/CGPraktikum.dir/GLPoint.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLPoint.cpp -o CMakeFiles/CGPraktikum.dir/GLPoint.cpp.s
 
 CMakeFiles/CGPraktikum.dir/GLVector.cpp.o: CMakeFiles/CGPraktikum.dir/flags.make
 CMakeFiles/CGPraktikum.dir/GLVector.cpp.o: GLVector.cpp
 CMakeFiles/CGPraktikum.dir/GLVector.cpp.o: CMakeFiles/CGPraktikum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CGPraktikum.dir/GLVector.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/GLVector.cpp.o -MF CMakeFiles/CGPraktikum.dir/GLVector.cpp.o.d -o CMakeFiles/CGPraktikum.dir/GLVector.cpp.o -c /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/GLVector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CGPraktikum.dir/GLVector.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/GLVector.cpp.o -MF CMakeFiles/CGPraktikum.dir/GLVector.cpp.o.d -o CMakeFiles/CGPraktikum.dir/GLVector.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLVector.cpp
 
 CMakeFiles/CGPraktikum.dir/GLVector.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CGPraktikum.dir/GLVector.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/GLVector.cpp > CMakeFiles/CGPraktikum.dir/GLVector.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLVector.cpp > CMakeFiles/CGPraktikum.dir/GLVector.cpp.i
 
 CMakeFiles/CGPraktikum.dir/GLVector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CGPraktikum.dir/GLVector.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/GLVector.cpp -o CMakeFiles/CGPraktikum.dir/GLVector.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLVector.cpp -o CMakeFiles/CGPraktikum.dir/GLVector.cpp.s
 
 CMakeFiles/CGPraktikum.dir/Image.cpp.o: CMakeFiles/CGPraktikum.dir/flags.make
 CMakeFiles/CGPraktikum.dir/Image.cpp.o: Image.cpp
 CMakeFiles/CGPraktikum.dir/Image.cpp.o: CMakeFiles/CGPraktikum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CGPraktikum.dir/Image.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/Image.cpp.o -MF CMakeFiles/CGPraktikum.dir/Image.cpp.o.d -o CMakeFiles/CGPraktikum.dir/Image.cpp.o -c /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Image.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CGPraktikum.dir/Image.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/Image.cpp.o -MF CMakeFiles/CGPraktikum.dir/Image.cpp.o.d -o CMakeFiles/CGPraktikum.dir/Image.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Image.cpp
 
 CMakeFiles/CGPraktikum.dir/Image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CGPraktikum.dir/Image.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Image.cpp > CMakeFiles/CGPraktikum.dir/Image.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Image.cpp > CMakeFiles/CGPraktikum.dir/Image.cpp.i
 
 CMakeFiles/CGPraktikum.dir/Image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CGPraktikum.dir/Image.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Image.cpp -o CMakeFiles/CGPraktikum.dir/Image.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Image.cpp -o CMakeFiles/CGPraktikum.dir/Image.cpp.s
 
 CMakeFiles/CGPraktikum.dir/Model.cpp.o: CMakeFiles/CGPraktikum.dir/flags.make
 CMakeFiles/CGPraktikum.dir/Model.cpp.o: Model.cpp
 CMakeFiles/CGPraktikum.dir/Model.cpp.o: CMakeFiles/CGPraktikum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/CGPraktikum.dir/Model.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/Model.cpp.o -MF CMakeFiles/CGPraktikum.dir/Model.cpp.o.d -o CMakeFiles/CGPraktikum.dir/Model.cpp.o -c /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Model.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/CGPraktikum.dir/Model.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/Model.cpp.o -MF CMakeFiles/CGPraktikum.dir/Model.cpp.o.d -o CMakeFiles/CGPraktikum.dir/Model.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Model.cpp
 
 CMakeFiles/CGPraktikum.dir/Model.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CGPraktikum.dir/Model.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Model.cpp > CMakeFiles/CGPraktikum.dir/Model.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Model.cpp > CMakeFiles/CGPraktikum.dir/Model.cpp.i
 
 CMakeFiles/CGPraktikum.dir/Model.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CGPraktikum.dir/Model.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Model.cpp -o CMakeFiles/CGPraktikum.dir/Model.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Model.cpp -o CMakeFiles/CGPraktikum.dir/Model.cpp.s
 
 CMakeFiles/CGPraktikum.dir/Scene.cpp.o: CMakeFiles/CGPraktikum.dir/flags.make
 CMakeFiles/CGPraktikum.dir/Scene.cpp.o: Scene.cpp
 CMakeFiles/CGPraktikum.dir/Scene.cpp.o: CMakeFiles/CGPraktikum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/CGPraktikum.dir/Scene.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/Scene.cpp.o -MF CMakeFiles/CGPraktikum.dir/Scene.cpp.o.d -o CMakeFiles/CGPraktikum.dir/Scene.cpp.o -c /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Scene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/CGPraktikum.dir/Scene.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/Scene.cpp.o -MF CMakeFiles/CGPraktikum.dir/Scene.cpp.o.d -o CMakeFiles/CGPraktikum.dir/Scene.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Scene.cpp
 
 CMakeFiles/CGPraktikum.dir/Scene.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CGPraktikum.dir/Scene.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Scene.cpp > CMakeFiles/CGPraktikum.dir/Scene.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Scene.cpp > CMakeFiles/CGPraktikum.dir/Scene.cpp.i
 
 CMakeFiles/CGPraktikum.dir/Scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CGPraktikum.dir/Scene.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Scene.cpp -o CMakeFiles/CGPraktikum.dir/Scene.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Scene.cpp -o CMakeFiles/CGPraktikum.dir/Scene.cpp.s
 
 CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.o: CMakeFiles/CGPraktikum.dir/flags.make
 CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.o: SolidRenderer.cpp
 CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.o: CMakeFiles/CGPraktikum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.o -MF CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.o.d -o CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.o -c /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/SolidRenderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.o -MF CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.o.d -o CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/SolidRenderer.cpp
 
 CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/SolidRenderer.cpp > CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/SolidRenderer.cpp > CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.i
 
 CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/SolidRenderer.cpp -o CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/SolidRenderer.cpp -o CMakeFiles/CGPraktikum.dir/SolidRenderer.cpp.s
 
 CMakeFiles/CGPraktikum.dir/Sphere.cpp.o: CMakeFiles/CGPraktikum.dir/flags.make
 CMakeFiles/CGPraktikum.dir/Sphere.cpp.o: Sphere.cpp
 CMakeFiles/CGPraktikum.dir/Sphere.cpp.o: CMakeFiles/CGPraktikum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/CGPraktikum.dir/Sphere.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/Sphere.cpp.o -MF CMakeFiles/CGPraktikum.dir/Sphere.cpp.o.d -o CMakeFiles/CGPraktikum.dir/Sphere.cpp.o -c /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Sphere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/CGPraktikum.dir/Sphere.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/Sphere.cpp.o -MF CMakeFiles/CGPraktikum.dir/Sphere.cpp.o.d -o CMakeFiles/CGPraktikum.dir/Sphere.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Sphere.cpp
 
 CMakeFiles/CGPraktikum.dir/Sphere.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CGPraktikum.dir/Sphere.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Sphere.cpp > CMakeFiles/CGPraktikum.dir/Sphere.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Sphere.cpp > CMakeFiles/CGPraktikum.dir/Sphere.cpp.i
 
 CMakeFiles/CGPraktikum.dir/Sphere.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CGPraktikum.dir/Sphere.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Sphere.cpp -o CMakeFiles/CGPraktikum.dir/Sphere.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Sphere.cpp -o CMakeFiles/CGPraktikum.dir/Sphere.cpp.s
 
 CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.o: CMakeFiles/CGPraktikum.dir/flags.make
 CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.o: WireframeRenderer.cpp
 CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.o: CMakeFiles/CGPraktikum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.o -MF CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.o.d -o CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.o -c /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/WireframeRenderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.o -MF CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.o.d -o CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/WireframeRenderer.cpp
 
 CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/WireframeRenderer.cpp > CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/WireframeRenderer.cpp > CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.i
 
 CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/WireframeRenderer.cpp -o CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/WireframeRenderer.cpp -o CMakeFiles/CGPraktikum.dir/WireframeRenderer.cpp.s
 
 CMakeFiles/CGPraktikum.dir/main.cpp.o: CMakeFiles/CGPraktikum.dir/flags.make
 CMakeFiles/CGPraktikum.dir/main.cpp.o: main.cpp
 CMakeFiles/CGPraktikum.dir/main.cpp.o: CMakeFiles/CGPraktikum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/CGPraktikum.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/main.cpp.o -MF CMakeFiles/CGPraktikum.dir/main.cpp.o.d -o CMakeFiles/CGPraktikum.dir/main.cpp.o -c /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/CGPraktikum.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGPraktikum.dir/main.cpp.o -MF CMakeFiles/CGPraktikum.dir/main.cpp.o.d -o CMakeFiles/CGPraktikum.dir/main.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/main.cpp
 
 CMakeFiles/CGPraktikum.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CGPraktikum.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/main.cpp > CMakeFiles/CGPraktikum.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/main.cpp > CMakeFiles/CGPraktikum.dir/main.cpp.i
 
 CMakeFiles/CGPraktikum.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CGPraktikum.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/main.cpp -o CMakeFiles/CGPraktikum.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/main.cpp -o CMakeFiles/CGPraktikum.dir/main.cpp.s
 
 # Object files for target CGPraktikum
 CGPraktikum_OBJECTS = \
@@ -273,7 +273,7 @@ CGPraktikum: CMakeFiles/CGPraktikum.dir/main.cpp.o
 CGPraktikum: CMakeFiles/CGPraktikum.dir/build.make
 CGPraktikum: /opt/homebrew/lib/libassimp.dylib
 CGPraktikum: CMakeFiles/CGPraktikum.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable CGPraktikum"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable CGPraktikum"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CGPraktikum.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -285,6 +285,6 @@ CMakeFiles/CGPraktikum.dir/clean:
 .PHONY : CMakeFiles/CGPraktikum.dir/clean
 
 CMakeFiles/CGPraktikum.dir/depend:
-	cd /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/CMakeFiles/CGPraktikum.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/konradbogen/Documents/GitHub/computergrafik/skelett /Users/konradbogen/Documents/GitHub/computergrafik/skelett /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CGPraktikum.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/CGPraktikum.dir/depend
 

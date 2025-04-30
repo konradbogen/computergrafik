@@ -1,8 +1,8 @@
 CMakeFiles/CGPraktikum.dir/Scene.cpp.o: \
-  /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Scene.cpp \
-  /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Scene.hpp \
-  /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Camera.hpp \
-  /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/GLMatrix.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Scene.cpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Scene.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Camera.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLMatrix.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -85,7 +85,7 @@ CMakeFiles/CGPraktikum.dir/Scene.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/move.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__undef_macros \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/limits \
-  /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/GLPoint.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLPoint.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__locale \
@@ -421,16 +421,16 @@ CMakeFiles/CGPraktikum.dir/Scene.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
-  /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/GLVector.hpp \
-  /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/math.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLVector.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/math.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
-  /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/structs.hpp \
-  /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Color.hpp \
-  /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Model.hpp \
-  /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Material.hpp \
-  /Users/konradbogen/Documents/Dokumente/Uni/Computergrafik/skelett/src/Sphere.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/structs.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Color.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Model.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Material.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Sphere.hpp \
   /opt/homebrew/include/assimp/postprocess.h \
   /opt/homebrew/include/assimp/types.h \
   /opt/homebrew/include/assimp/defs.h \

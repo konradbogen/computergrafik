@@ -8,11 +8,7 @@
 ** (Aufgabenblatt 2 - Aufgabe 1)
 **/
 void WireframeRenderer::renderScene(Color color) {
-    GLPoint c = GLPoint(this->mImage->getWidth() / 2.0, this->mImage->getHeight() / 2.0, 0.0);
-    for (int i = 0; i < 100; i++) {
-        this->mImage->setValue(c(0)+i, c(1), color);
-    }
-    this->drawBresenhamLine(GLPoint(0,0,0), GLPoint(100, 0, 0), color);
+    
 }
 
 /**
@@ -22,13 +18,42 @@ void WireframeRenderer::renderScene(Color color) {
 ** (Aufgabenblatt 1 - Aufgabe 2
 **/
 void WireframeRenderer::drawBresenhamLine(GLPoint p1, GLPoint p2, Color color) {
-    double x1 = p1(0);
-    double y1 = p1(1);
-    double x2 = p2(0);
-    double y2 = p2(1); 
+    int x1 = static_cast<int>(p1(0));
+    int y1 = static_cast<int>(p1(1));
+    int x2 = static_cast<int>(p2(0));
+    int y2 = static_cast<int>(p2(1));
 
+    bool steil = abs(y2 - y1) > abs(x2 - x1);
+    if (steil) {
+        std::swap(x1, y1);
+        std::swap(x2, y2);
+    }
 
+    if (x1 > x2) {
+        std::swap(x1, x2);
+        std::swap(y1, y2);
+    }
+
+    int dx = x2 - x1;
+    int dy = abs(y2 - y1);
+    int e = dx / 2;
+    int ystep = (y1 < y2) ? 1 : -1;
+    int y = y1;
+
+    for (int x = x1; x <= x2; ++x) {
+        if (steil)
+            this->mImage->setValue(y, x, color);
+        else
+            this->mImage->setValue(x, y, color);
+
+        e -= dy;
+        if (e < 0) {
+            y += ystep;
+            e += dx;
+        }
+    }
 }
+
 
 /**
 ** Füllt einen vorgegebenen Bereich (abgegrenzt durch Randfarbe/borderColor) mit einer vorgegebenen Farbe (fillColor).
