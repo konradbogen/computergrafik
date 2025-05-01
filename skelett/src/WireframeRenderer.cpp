@@ -61,4 +61,34 @@ void WireframeRenderer::drawBresenhamLine(GLPoint p1, GLPoint p2, Color color) {
 ** (Aufgabenblatt 1 - Aufgabe 3) 
 **/
 void WireframeRenderer::seedFillArea(GLPoint seed, Color borderColor, Color fillColor) {
+    std::stack<GLPoint> pointStack;
+    pointStack.push(seed);
+    int width = this->mImage->getWidth();
+    int height = this->mImage->getHeight();
+    std::cout << "Seed coordinates: (" << seed(0) << ", " << seed(1) << ")" << std::endl;
+    while (!pointStack.empty()) {
+        GLPoint current = pointStack.top();
+        pointStack.pop();
+        int x = static_cast<int>(current(0));
+        int y = static_cast<int>(current(1));
+
+        if (x < 0 || x >= width || y < 0 || y >= height) {
+            continue;
+        }
+
+        Color c = this->mImage->getValues()[y * width + x];
+        if ((c.r == borderColor.r && c.g == borderColor.g && c.b == borderColor.b) ||
+            (c.r == fillColor.r && c.g == fillColor.g && c.b == fillColor.b)) {
+            std::cout << "Border reached" << std::endl;
+            continue;
+        }
+
+        this->mImage->setValue(x, y, fillColor);
+
+        pointStack.push(GLPoint(x + 1, y, 0));
+        pointStack.push(GLPoint(x - 1, y, 0));
+        pointStack.push(GLPoint(x, y + 1, 0));
+        pointStack.push(GLPoint(x, y - 1, 0));
+    }
 }
+

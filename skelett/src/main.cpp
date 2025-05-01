@@ -76,9 +76,28 @@ int main(int argc, char **argv) {
     wireframeRenderer.drawBresenhamLine(GLPoint(cx + dy, cy - dx, 0), GLPoint(cx + next_dy, cy - next_dx, 0), color);
   }
 
-  wireframeRenderer.renderScene(color);
 
   /* Aufgabenblatt 1, Aufgabe 3: Testen Sie Ihre seedFillArea-Methode hier */  
+  for (int i = 0; i <= 1; i++) {
+    dx = 100 * std::sin(M_PI * (i + 0.5) / 8);
+    dy = 100 * std::cos(M_PI * (i + 0.5) / 8);
+    std::default_random_engine generator;
+    std::uniform_real_distribution<double> distribution(0.0, 1.0);
+    Color colorA(distribution(generator), distribution(generator), distribution(generator));
+    Color colorB(distribution(generator), distribution(generator), distribution(generator));
+    Color colors[] = {colorA, colorB};
+    wireframeRenderer.seedFillArea(GLPoint(cx + dx, cy + dy, 0), color, colors [i % 2]);
+      wireframeRenderer.seedFillArea(GLPoint(cx + dy, cy + dx, 0), color, colors [(i+1) % 2]);
+   wireframeRenderer.seedFillArea(GLPoint(cx + dx, cy - dy, 0), color, colors [(i+1) % 2]);
+    wireframeRenderer.seedFillArea(GLPoint(cx + dy, cy - dx, 0), color, colors [(i) % 2]);
+
+  wireframeRenderer.seedFillArea(GLPoint(cx - dx, cy + dy, 0), color, colors [(i+1) % 2]);
+   wireframeRenderer.seedFillArea(GLPoint(cx - dy, cy + dx, 0), color, colors [(i) % 2]);
+     wireframeRenderer.seedFillArea(GLPoint(cx - dx, cy - dy, 0), color, colors [(i) % 2]);
+    wireframeRenderer.seedFillArea(GLPoint(cx - dy,  cy - dx, 0), color, colors [(i+1) % 2]); 
+  }
+
+  wireframeRenderer.renderScene(color);
 
   /* Aufgabenblatt 2, Aufgabe 3: Setzen Sie die Transformationen der Modelle */
 
