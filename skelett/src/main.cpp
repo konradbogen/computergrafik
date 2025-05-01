@@ -40,20 +40,42 @@ int main(int argc, char **argv) {
 
 
   /* Aufgabenblatt 1, Aufgabe 2: Testen Sie Ihre drawBresenhamLine-Methode hier */
-  GLPoint c = GLPoint(img->getWidth() / 2.0, img->getHeight() / 2.0, 0.0);
+  GLPoint center = GLPoint(img->getWidth() / 2.0, img->getHeight() / 2.0, 0.0);
   Color color = Color(0.0, 0.0, 0.0);
-  double dx = 50;
-  double dy = 70;
+  double dx = 0;
+  double dy = 0;
   double cx = img->getWidth() / 2.0;
   double cy = img->getHeight() / 2.0;
-  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx + dx, cy + dy, 0), color);
-  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx + dy, cy + dx, 0), color);
-  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx  -dx, cy + dy, 0), color);
-  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx + dy, cy -dx, 0), color);
-  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx + dx, cy -dy, 0), color);
-  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx -dy, cy+dx, 0), color);
-  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx-dx, cy-dy, 0), color);
-  wireframeRenderer.drawBresenhamLine(c, GLPoint(cx-dy, cy-dx, 0), color);
+  double c = 50;
+  for (int i = 0; i <= 2; i++) {
+    dx = 200 * std::sin(M_PI * i / 8);
+    dy = 200 * std::cos(M_PI * i / 8);
+    double prev_dx = 200 * std::sin(M_PI * (i - 1) / 8) * 0.9;
+    double prev_dy = 200 * std::cos(M_PI * (i - 1) / 8) * 0.9; 
+    double next_dx = 200 * std::sin(M_PI * (i + 1) / 8) * 0.9;
+    double next_dy = 200 * std::cos(M_PI * (i + 1) / 8) * 0.9;  
+
+    wireframeRenderer.drawBresenhamLine(center, GLPoint(cx + dx, cy + dy, 0), color);
+    wireframeRenderer.drawBresenhamLine(center, GLPoint(cx + dy, cy + dx, 0), color);
+    wireframeRenderer.drawBresenhamLine(center, GLPoint(cx + dx, cy - dy, 0), color);
+    wireframeRenderer.drawBresenhamLine(center, GLPoint(cx + dy, cy - dx, 0), color);
+
+    wireframeRenderer.drawBresenhamLine(center, GLPoint(cx - dx, cy + dy, 0), color);
+    wireframeRenderer.drawBresenhamLine(center, GLPoint(cx - dy, cy + dx, 0), color);
+    wireframeRenderer.drawBresenhamLine(center, GLPoint(cx - dx, cy - dy, 0), color);
+    wireframeRenderer.drawBresenhamLine(center, GLPoint(cx -dy,  cy - dx, 0), color);
+
+    wireframeRenderer.drawBresenhamLine(GLPoint(cx + dx, cy + dy, 0), GLPoint(cx + next_dx, cy + next_dy, 0), color);
+    wireframeRenderer.drawBresenhamLine(GLPoint(cx - dx, cy + dy, 0), GLPoint(cx - prev_dx, cy + prev_dy, 0), color);
+    wireframeRenderer.drawBresenhamLine(GLPoint(cx - dx, cy - dy, 0), GLPoint(cx - next_dx, cy - next_dy, 0), color);
+    wireframeRenderer.drawBresenhamLine(GLPoint(cx + dx, cy - dy, 0), GLPoint(cx + prev_dx, cy - prev_dy, 0), color);
+
+    wireframeRenderer.drawBresenhamLine(GLPoint(cx + dy, cy + dx, 0), GLPoint(cx + prev_dy, cy + prev_dx, 0), color);
+    wireframeRenderer.drawBresenhamLine(GLPoint(cx - dy, cy + dx, 0), GLPoint(cx - next_dy, cy + next_dx, 0), color);
+    wireframeRenderer.drawBresenhamLine(GLPoint(cx - dy, cy - dx, 0), GLPoint(cx - prev_dy, cy - prev_dx, 0), color);
+    wireframeRenderer.drawBresenhamLine(GLPoint(cx + dy, cy - dx, 0), GLPoint(cx + next_dy, cy - next_dx, 0), color);
+  }
+
   wireframeRenderer.renderScene(color);
 
   /* Aufgabenblatt 1, Aufgabe 3: Testen Sie Ihre seedFillArea-Methode hier */  
