@@ -1,5 +1,6 @@
 
 #include "WireframeRenderer.hpp"
+#include <stack>
 
 /**
 ** Zeichnet alle Dreiecke der Scene als Wireframe-Rendering unter Verwendung des
