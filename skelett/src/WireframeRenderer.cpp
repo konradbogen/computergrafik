@@ -66,7 +66,6 @@ void WireframeRenderer::seedFillArea(GLPoint seed, Color borderColor, Color fill
     pointStack.push(seed);
     int width = this->mImage->getWidth();
     int height = this->mImage->getHeight();
-    std::cout << "Seed coordinates: (" << seed(0) << ", " << seed(1) << ")" << std::endl;
     while (!pointStack.empty()) {
         GLPoint current = pointStack.top();
         pointStack.pop();
@@ -80,7 +79,6 @@ void WireframeRenderer::seedFillArea(GLPoint seed, Color borderColor, Color fill
         Color c = this->mImage->getValues()[y * width + x];
         if ((c.r == borderColor.r && c.g == borderColor.g && c.b == borderColor.b) ||
             (c.r == fillColor.r && c.g == fillColor.g && c.b == fillColor.b)) {
-            std::cout << "Border reached" << std::endl;
             continue;
         }
 
