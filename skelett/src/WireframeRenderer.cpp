@@ -9,7 +9,20 @@
 ** (Aufgabenblatt 2 - Aufgabe 1)
 **/
 void WireframeRenderer::renderScene(Color color) {
-    
+    std::vector<Model> models = this->mScene->getModels (); 
+    for (int i = 0; i < models.size(); i++) {
+        Model model = models[i];
+        std::vector<Triangle> triangles = model.mTriangles;
+        for (int j = 1; j < triangles.size (); j++) {
+            GLPoint a = triangles[j].vertex[0];
+            GLPoint b = triangles[j].vertex[1];
+            GLPoint c = triangles[j].vertex[1];
+            this->drawBresenhamLine (a, b, color);
+            this->drawBresenhamLine (b, c, color);
+            this->drawBresenhamLine (c, a, color);
+            
+        }
+    }
 }
 
 /**
@@ -37,7 +50,7 @@ void WireframeRenderer::drawBresenhamLine(GLPoint p1, GLPoint p2, Color color) {
 
     int dx = x2 - x1;
     int dy = abs(y2 - y1);
-    int e = dx / 2;
+    int e = 2 * dy - dx;
     int ystep = (y1 < y2) ? 1 : -1;
     int y = y1;
 
@@ -46,12 +59,11 @@ void WireframeRenderer::drawBresenhamLine(GLPoint p1, GLPoint p2, Color color) {
             this->mImage->setValue(y, x, color);
         else
             this->mImage->setValue(x, y, color);
-
-        e -= dy;
-        if (e < 0) {
+        if (e >= 0) {
             y += ystep;
-            e += dx;
+            e -= 2*dx;
         }
+        e += 2*dy;
     }
 }
 

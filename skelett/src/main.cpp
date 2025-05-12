@@ -40,9 +40,9 @@ int main(int argc, char **argv) {
 
 
   /* Aufgabenblatt 1, Aufgabe 2: Testen Sie Ihre drawBresenhamLine-Methode hier */
-  GLPoint center = GLPoint(img->getWidth() / 2.0, img->getHeight() / 2.0, 0.0);
+   GLPoint center = GLPoint(img->getWidth() / 2.0, img->getHeight() / 2.0, 0.0);
   Color color = Color(0.0, 0.0, 0.0);
-  double dx = 0;
+  /* double dx = 0;
   double dy = 0;
   double cx = img->getWidth() / 2.0;
   double cy = img->getHeight() / 2.0;
@@ -78,7 +78,7 @@ int main(int argc, char **argv) {
 
 
   /* Aufgabenblatt 1, Aufgabe 3: Testen Sie Ihre seedFillArea-Methode hier */  
-  for (int i = 0; i <= 1; i++) {
+ /*  for (int i = 0; i <= 1; i++) {
     dx = 100 * std::sin(M_PI * (i + 0.5) / 8);
     dy = 100 * std::cos(M_PI * (i + 0.5) / 8);
     std::default_random_engine generator(1);  
@@ -98,9 +98,9 @@ int main(int argc, char **argv) {
     wireframeRenderer.seedFillArea(GLPoint(cx - dy, cy + dx, 0), color, colors [(i) % 2]);
     wireframeRenderer.seedFillArea(GLPoint(cx - dx, cy - dy, 0), color, colors [(i) % 2]);
     wireframeRenderer.seedFillArea(GLPoint(cx - dy,  cy - dx, 0), color, colors [(i+1) % 2]); 
-  } 
+  } */
 
-  wireframeRenderer.renderScene(color);
+  wireframeRenderer.renderScene(color);  
 
   /* Aufgabenblatt 2, Aufgabe 3: Setzen Sie die Transformationen der Modelle */
 
