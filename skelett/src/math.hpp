@@ -1,6 +1,7 @@
 #pragma once
 
 #include <array>
+#include <iostream>
 #include <vector>
 #include <limits>
 #include <memory>
@@ -56,6 +57,29 @@ inline GLVector operator*(const GLMatrix &lhs, const GLVector &rhs) {
 	GLVector updated = GLVector();
 	for (int i=0; i<3; i++) {
 		updated(i) = lhs.getColumn(0)(i) * rhs(0) + lhs.getColumn(1)(i) * rhs(1) + lhs.getColumn(2)(i) * rhs(2) + lhs.getColumn(3)(i);
+	}
+	return updated;
+}
+
+inline GLPoint operator*(const GLMatrix &lhs, const GLPoint &rhs) {
+	GLPoint updated = GLPoint();
+	for (int i=0; i<3; i++) {
+		updated(i) = lhs.getColumn(0)(i) * rhs(0) + lhs.getColumn(1)(i) * rhs(1) + lhs.getColumn(2)(i) * rhs(2) + lhs.getColumn(3)(i);
+	}
+	return updated;
+}
+
+inline GLMatrix operator*(const GLMatrix &lhs, const GLMatrix &rhs) {
+	GLMatrix updated = GLMatrix();
+	for (int i=0; i<4; i++) {
+		for (int j=0; j<4; j++) {
+			float sum = 0;
+			for (int k=0; k<4; k++) {
+				sum += lhs(i, k) * rhs(k, j);
+			}
+			// std::cout<<i<<";"<<sum<<"\n";
+			updated.setValue(i, j, sum);
+		}
 	}
 	return updated;
 }
