@@ -5,6 +5,7 @@
 #include <limits>
 #include <memory>
 
+// #include "GLMatrix.hpp"
 #include "GLMatrix.hpp"
 #include "GLPoint.hpp"
 #include "GLVector.hpp"
@@ -49,6 +50,14 @@ inline GLVector crossProduct(const GLVector &lhs, const GLVector &rhs) {
 
 inline double dotProduct(const GLVector &lhs, const GLVector &rhs) {
   return lhs(0) * rhs(0) + lhs(1) * rhs(1) + lhs(2) * rhs(2);
+}
+
+inline GLVector operator*(const GLMatrix &lhs, const GLVector &rhs) {
+	GLVector updated = GLVector();
+	for (int i=0; i<3; i++) {
+		updated(i) = lhs.getColumn(0)(i) * rhs(0) + lhs.getColumn(1)(i) * rhs(1) + lhs.getColumn(2)(i) * rhs(2) + lhs.getColumn(3)(i);
+	}
+	return updated;
 }
 
 inline int sgn(int x) { return (x > 0) ? 1 : (x < 0) ? -1 : 0; }
