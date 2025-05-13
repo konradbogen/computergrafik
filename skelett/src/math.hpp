@@ -60,29 +60,35 @@ inline GLVector operator*(const GLMatrix &lhs, const GLVector &rhs) {
 	return updated;
 }
 
-inline int sgn(int x) { return (x > 0) ? 1 : (x < 0) ? -1 : 0; }
 
-/** Aufgabenblatt 2, Aufgabe 2 **/
-
-inline GLVector matrix_vector (const GLMatrix &m, const GLVector &v) {
-  GLVector x = GLVector ();
-  for (int row = 0; row < 4; row++) {
-    for (int col = 0; col < 4; col++) {
-      x(row) += m(row, col) * v(col);
+inline GLMatrix operator* (const GLMatrix &lhs, const GLMatrix &rhs) {
+  GLMatrix updated = GLMatrix ();
+  for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < 4; j++) {
+      for (int x = 0; x < 4; x++) {
+        updated.getColumn(j)(i) += lhs.getColumn(x)(i) * rhs.getColumn(j)(x);
+      }
     }
   }
-  return x;
 }
 
-inline GLPoint matrix_point (const GLMatrix &m, const GLPoint &p) {
+inline GLPoint operator* (const GLMatrix &m, const GLPoint &p) {
   GLVector x = GLVector ();
   x(0) = p(0);
   x(1) = p(1);
   x(2) = p(2);
   x(3) = 1;
-  x = matrix_vector (m, x);
+  x = m*x;
   GLPoint y = GLPoint ();
   y(0) = x(0);
   y(1) = x(1);
   y(2) = y(2);
-}
+  return y;
+} 
+
+inline int sgn(int x) { return (x > 0) ? 1 : (x < 0) ? -1 : 0; }
+
+/** Aufgabenblatt 2, Aufgabe 2 **/
+
+
+
