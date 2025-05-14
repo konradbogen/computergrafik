@@ -1,5 +1,7 @@
 
 #include "Model.hpp"
+#include "GLMatrix.hpp"
+#include <cmath>
 
 // Konstruktor
 Model::Model() {
@@ -43,6 +45,25 @@ void Model::updateMatrix () {
   }
 }
 
+GLMatrix constructRotation (GLVector rotation) {
+	GLMatrix xRot = GLMatrix();
+	xRot.setColumn(1, GLVector(1, 0, 0));
+	xRot.setColumn(2, GLVector(0, cos(rotation(0)), sin(rotation(0))));
+	xRot.setColumn(3, GLVector(0, -sin(rotation(0)), cos(rotation(0))));
+
+	GLMatrix yRot = GLMatrix();
+	xRot.setColumn(1, GLVector(cos(rotation(1)), 0, -sin(rotation(1))));
+	xRot.setColumn(2, GLVector(0, 1, 0));
+	xRot.setColumn(3, GLVector(sin(rotation(1)), 0, cos(rotation(1))));
+
+	GLMatrix zRot = GLMatrix();
+	xRot.setColumn(1, GLVector(cos(rotation(2)), sin(rotation(1)), 0));
+	xRot.setColumn(2, GLVector(-sin(rotation(2)), cos(rotation(2)), 0));
+	xRot.setColumn(3, GLVector(0, 0, 1));
+
+
+	return zRot * yRot * xRot;
+}
 
 GLMatrix Model::getTransformation() const { return mMatrix; }
 

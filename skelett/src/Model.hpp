@@ -33,4 +33,5 @@ class Model {
   // Die Transformationsmatrix des Modells
   GLMatrix mMatrix;
   void updateMatrix();
+
 };
