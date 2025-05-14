@@ -10,16 +10,18 @@
 **/
 void WireframeRenderer::renderScene(Color color) {
     std::vector<Model> &models = this->mScene->getModels ();
-    models[0].setTranslation (GLVector (50, 0, 0));
+    models[0].setTranslation (GLVector (200, 100, 0));
+    models[1].setTranslation (GLVector (400, 100, 0));
+    models[0].setRotation (GLVector(0, 0, 0.5 * M_PI));
     for (int i = 0; i < models.size(); i++) {
         Model model = models[i];
         GLMatrix m = model.getTransformation ();
         std::vector<Triangle> triangles = model.mTriangles;
         for (int j = 1; j < triangles.size (); j++) {
-            GLPoint a = m * triangles[j].vertex[0];
-            printf ("%f \n", a);
-            GLPoint b = m * triangles[j].vertex[1];
-            GLPoint c = m * triangles[j].vertex[1];
+            GLPoint a = m* triangles[j].vertex[0];
+            //printf ("(%f, %f, %f) \n", a(0), a(1), a);
+            GLPoint b =  m * triangles[j].vertex[1];
+            GLPoint c =  m * triangles[j].vertex[1];
             this->drawBresenhamLine (a, b, color);
             this->drawBresenhamLine (b, c, color);
             this->drawBresenhamLine (c, a, color);

@@ -6,6 +6,7 @@
 // Konstruktor
 Model::Model() {
   /* Aufgabenblatt 2, Aufgabe 3: Setzen Sie die default Werte */
+  this->mMatrix = GLMatrix ();
 }
 
 // Setter für das Material
@@ -25,7 +26,7 @@ void Model::setRotation(GLVector rotation) {
 }
 
 void Model::setTranslation(GLVector translation) {
-  this->mTranslation = this->mTranslation;
+  this->mTranslation = translation;
   this->updateMatrix ();
 };
 
@@ -35,27 +36,43 @@ void Model::setScale(GLVector scale) {
 };
 
 GLMatrix constructRotation (GLVector rotation) {
+	printf ("Rotationsvektor\n");
+	std::cout<<rotation;
+
+
 	GLMatrix xRot = GLMatrix();
 	xRot.setColumn(0, GLVector(1, 0, 0));
 	xRot.setColumn(1, GLVector(0, cos(rotation(0)), sin(rotation(0))));
 	xRot.setColumn(2, GLVector(0, -sin(rotation(0)), cos(rotation(0))));
+	printf ("XRot\n");
+	std::cout<<xRot;
 
 	GLMatrix yRot = GLMatrix();
-	xRot.setColumn(0, GLVector(cos(rotation(1)), 0, -sin(rotation(1))));
-	xRot.setColumn(1, GLVector(0, 1, 0));
-	xRot.setColumn(2, GLVector(sin(rotation(1)), 0, cos(rotation(1))));
+	yRot.setColumn(0, GLVector(cos(rotation(1)), 0, -sin(rotation(1))));
+	yRot.setColumn(1, GLVector(0, 1, 0));
+	yRot.setColumn(2, GLVector(sin(rotation(1)), 0, cos(rotation(1))));
+	printf ("yRot\n");
+	std::cout<<yRot;
 
 	GLMatrix zRot = GLMatrix();
-	xRot.setColumn(0, GLVector(cos(rotation(2)), sin(rotation(1)), 0));
-	xRot.setColumn(1, GLVector(-sin(rotation(2)), cos(rotation(2)), 0));
-	xRot.setColumn(2, GLVector(0, 0, 1));
+	zRot.setColumn(0, GLVector(cos(rotation(2)), sin(rotation(1)), 0));
+	zRot.setColumn(1, GLVector(-sin(rotation(2)), cos(rotation(2)), 0));
+	zRot.setColumn(2, GLVector(0, 0, 1));
+	printf ("zRot\n");
+	std::cout<<zRot;
 
+	printf ("\nRotationsmatrix\n");
+	GLMatrix r = zRot * yRot;
+	r =  r * xRot;
 
-	return zRot * yRot * xRot;
+	std::cout<<r;
+	return r;
 }
 
 void Model::updateMatrix () {
 	GLMatrix base = this->mMatrix;
+	printf ("Base\n");
+	std::cout<<base;
 	base.setColumn(3, GLVector(0,0,0));
 	base = constructRotation(this->mRotation) * base;
 
@@ -63,15 +80,17 @@ void Model::updateMatrix () {
 	scale.setColumn (0, GLVector (this->mScale (0), 0, 0));
 	scale.setColumn (1, GLVector (0, this->mScale (1), 0));
 	scale.setColumn (2, GLVector (0, 0, this->mScale(2)));
-	base = scale * base;
+	//base = scale * base;
 
-	GLVector transl = GLVector();
-	transl = this->mMatrix.getColumn(3) + this->mTranslation;
-	base.setColumn(3, transl);
+	GLMatrix transl = GLMatrix ();
+	transl.setColumn (3, this->mTranslation);
+	base = transl * base;
 
 	this->mMatrix = base;
 	this->mRotation = GLVector();
 	this->mTranslation = GLVector();
+	printf ("Matrix T * S * R * M\n");
+	std::cout<<base;
 	this->mScale = GLVector();
 }
 
