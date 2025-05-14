@@ -67,8 +67,11 @@ void Model::updateMatrix () {
 	GLVector transl = GLVector();
 	transl = this->mMatrix.getColumn(3) + this->mTranslation;
 	base.setColumn(3, transl);
-	
 
+	this->mMatrix = base;
+	this->mRotation = GLVector();
+	this->mTranslation = GLVector();
+	this->mScale = GLVector();
 }
 
 GLMatrix Model::getTransformation() const { return mMatrix; }
