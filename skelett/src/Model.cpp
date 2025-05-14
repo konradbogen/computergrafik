@@ -6,7 +6,10 @@
 // Konstruktor
 Model::Model() {
   /* Aufgabenblatt 2, Aufgabe 3: Setzen Sie die default Werte */
-  this->mMatrix = GLMatrix ();
+  this->mMatrix = GLMatrix();
+  this->mScale = GLVector(1, 1, 1);
+  this->mRotation = GLVector();
+  this->mTranslation = GLVector();
 }
 
 // Setter für das Material
@@ -19,79 +22,82 @@ void Model::setMaterial(Material material) {
   mMaterial.color = Color(material.color.r, material.color.g, material.color.b);
 }
 
-/* Aufgabenblatt 2, Aufgabe 3: Implementieren Sie die vier Methoden für die Transformationen hier */
+/* Aufgabenblatt 2, Aufgabe 3: Implementieren Sie die vier Methoden für die 
+ * ransformationen hier */
 void Model::setRotation(GLVector rotation) {
   this->mRotation = rotation;
-  this->updateMatrix ();
+  this->updateMatrix();
 }
 
 void Model::setTranslation(GLVector translation) {
   this->mTranslation = translation;
-  this->updateMatrix ();
+  this->updateMatrix();
 };
 
 void Model::setScale(GLVector scale) {
   this->mScale = scale;
-  this->updateMatrix ();
+  this->updateMatrix();
 };
 
-GLMatrix constructRotation (GLVector rotation) {
-	GLMatrix xRot = GLMatrix();
-	xRot.setColumn(0, GLVector(1, 0, 0));
-	xRot.setColumn(1, GLVector(0, cos(rotation(0)), sin(rotation(0))));
-	xRot.setColumn(2, GLVector(0, -sin(rotation(0)), cos(rotation(0))));
+GLMatrix constructRotation(GLVector rotation) {
+  GLMatrix xRot = GLMatrix();
+  xRot.setColumn(0, GLVector(1, 0, 0));
+  xRot.setColumn(1, GLVector(0, cos(rotation(0)), sin(rotation(0))));
+  xRot.setColumn(2, GLVector(0, -sin(rotation(0)), cos(rotation(0))));
 
-	GLMatrix yRot = GLMatrix();
-	yRot.setColumn(0, GLVector(cos(rotation(1)), 0, -sin(rotation(1))));
-	yRot.setColumn(1, GLVector(0, 1, 0));
-	yRot.setColumn(2, GLVector(sin(rotation(1)), 0, cos(rotation(1))));
+  GLMatrix yRot = GLMatrix();
+  yRot.setColumn(0, GLVector(cos(rotation(1)), 0, -sin(rotation(1))));
+  yRot.setColumn(1, GLVector(0, 1, 0));
+  yRot.setColumn(2, GLVector(sin(rotation(1)), 0, cos(rotation(1))));
 
-	GLMatrix zRot = GLMatrix();
-	zRot.setColumn(0, GLVector(cos(rotation(2)), sin(rotation(2)), 0));
-	zRot.setColumn(1, GLVector(-sin(rotation(2)), cos(rotation(2)), 0));
-	zRot.setColumn(2, GLVector(0, 0, 1));
+  GLMatrix zRot = GLMatrix();
+  zRot.setColumn(0, GLVector(cos(rotation(2)), sin(rotation(2)), 0));
+  zRot.setColumn(1, GLVector(-sin(rotation(2)), cos(rotation(2)), 0));
+  zRot.setColumn(2, GLVector(0, 0, 1));
 
-	GLMatrix r = zRot * yRot;
-	r =  r * xRot;
+  GLMatrix r = zRot * yRot;
+  r = r * xRot;
 
-	std::cout<<r;
-	return r;
+  std::cout << r;
+  return r;
 }
 
-void Model::updateMatrix () {
-	GLMatrix base = this->mMatrix;
-	printf ("Init Base\n");
-	std::cout<<base;
+void Model::updateMatrix() {
+  GLMatrix base = this->mMatrix;
+  printf("Init Base\n");
+  std::cout << base;
 
-	base.setColumn(3, GLVector(0,0,0));
-	base = constructRotation(this->mRotation) * base;
+  base.setColumn(3, GLVector(0, 0, 0));
+  base = constructRotation(this->mRotation) * base;
 
-	printf ("Rotated Base\n");
-	std::cout<<base;
+  printf("Rotated Base\n");
+  std::cout << base;
 
-	GLMatrix scale = GLMatrix ();
-	scale.setColumn (0, GLVector (this->mScale (0), 0, 0));
-	scale.setColumn (1, GLVector (0, this->mScale (1), 0));
-	scale.setColumn (2, GLVector (0, 0, this->mScale(2)));
-	base = scale * base;
+  GLMatrix scale = GLMatrix();
+  scale.setColumn(0, GLVector(this->mScale(0), 0, 0));
+  scale.setColumn(1, GLVector(0, this->mScale(1), 0));
+  scale.setColumn(2, GLVector(0, 0, this->mScale(2)));
+  base = scale * base;
 
-	printf ("Scaled Base\n");
-	std::cout<<base;
+  printf("Scaled Base\n");
+  std::cout << base;
 
-	GLMatrix transl = GLMatrix ();
-	base.setColumn (3, this->mTranslation + this->mMatrix.getColumn(3));
+  GLMatrix transl = GLMatrix();
+  base.setColumn(3, this->mTranslation + this->mMatrix.getColumn(3));
 
+  printf("Translated Base Base\n");
+  std::cout << base;
+  // base = transl * base;
 
-	printf ("Translated Base Base\n");
-	std::cout<<base;
-	// base = transl * base;
+  this->mMatrix = base;
+  this->mRotation = GLVector();
+  this->mTranslation = GLVector();
+  printf("Matrix T * S * R * M\n");
+  std::cout << base;
 
-	this->mMatrix = base;
-	this->mRotation = GLVector();
-	this->mTranslation = GLVector();
-	printf ("Matrix T * S * R * M\n");
-	std::cout<<base;
-	this->mScale = GLVector();
+  this->mScale = GLVector(1, 1, 1);
+  this->mRotation = GLVector();
+  this->mTranslation = GLVector();
 }
 
 GLMatrix Model::getTransformation() const { return mMatrix; }

@@ -11,7 +11,7 @@
 void WireframeRenderer::renderScene(Color color) {
     std::vector<Model> &models = this->mScene->getModels ();
     models[0].setTranslation (GLVector (200, 100, 0));
-    models[1].setTranslation (GLVector (400, 100, 0));
+    // models[1].setTranslation (GLVector (400, 100, 0));
     models[0].setRotation (GLVector(0, 0, 0.5 * M_PI));
     models[0].setScale (GLVector(2, 2, 2));
     for (int i = 0; i < models.size(); i++) {
