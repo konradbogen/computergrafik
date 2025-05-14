@@ -37,32 +37,32 @@ void Model::setScale(GLVector scale) {
       );
 };
 
-void Model::updateMatrix () {
-  std::vector<Triangle> triangles = mTriangles;
-  int nTriangles = triangles.size ();
-  for (int i = 0; i < nTriangles; i++) {
-
-  }
-}
-
 GLMatrix constructRotation (GLVector rotation) {
 	GLMatrix xRot = GLMatrix();
-	xRot.setColumn(1, GLVector(1, 0, 0));
-	xRot.setColumn(2, GLVector(0, cos(rotation(0)), sin(rotation(0))));
-	xRot.setColumn(3, GLVector(0, -sin(rotation(0)), cos(rotation(0))));
+	xRot.setColumn(0, GLVector(1, 0, 0));
+	xRot.setColumn(1, GLVector(0, cos(rotation(0)), sin(rotation(0))));
+	xRot.setColumn(2, GLVector(0, -sin(rotation(0)), cos(rotation(0))));
 
 	GLMatrix yRot = GLMatrix();
-	xRot.setColumn(1, GLVector(cos(rotation(1)), 0, -sin(rotation(1))));
-	xRot.setColumn(2, GLVector(0, 1, 0));
-	xRot.setColumn(3, GLVector(sin(rotation(1)), 0, cos(rotation(1))));
+	xRot.setColumn(0, GLVector(cos(rotation(1)), 0, -sin(rotation(1))));
+	xRot.setColumn(1, GLVector(0, 1, 0));
+	xRot.setColumn(2, GLVector(sin(rotation(1)), 0, cos(rotation(1))));
 
 	GLMatrix zRot = GLMatrix();
-	xRot.setColumn(1, GLVector(cos(rotation(2)), sin(rotation(1)), 0));
-	xRot.setColumn(2, GLVector(-sin(rotation(2)), cos(rotation(2)), 0));
-	xRot.setColumn(3, GLVector(0, 0, 1));
+	xRot.setColumn(0, GLVector(cos(rotation(2)), sin(rotation(1)), 0));
+	xRot.setColumn(1, GLVector(-sin(rotation(2)), cos(rotation(2)), 0));
+	xRot.setColumn(2, GLVector(0, 0, 1));
 
 
 	return zRot * yRot * xRot;
+}
+
+void Model::updateMatrix () {
+	GLMatrix base = this->mMatrix;
+	base.setColumn(3, GLVector(0,0,0));
+	base = constructRotation(this->mRotation) * base;
+
+
 }
 
 GLMatrix Model::getTransformation() const { return mMatrix; }
