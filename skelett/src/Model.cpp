@@ -30,11 +30,7 @@ void Model::setTranslation(GLVector translation) {
 };
 
 void Model::setScale(GLVector scale) {
-  this->mScale =
-      GLVector(this->mScale(0) * scale(0), this->mScale(1) * scale(1),
-               this->mScale(2) * scale(2),
-
-      );
+  this->mScale = GLVector(this->mScale(0) * scale(0), this->mScale(1) * scale(1), this->mScale(2) * scale(2));
 };
 
 GLMatrix constructRotation (GLVector rotation) {
@@ -61,7 +57,11 @@ void Model::updateMatrix () {
 	GLMatrix base = this->mMatrix;
 	base.setColumn(3, GLVector(0,0,0));
 	base = constructRotation(this->mRotation) * base;
-
+	GLMatrix scale = GLMatrix ();
+	scale.setColumn (0, GLVector (this->mScale (0), 0, 0));
+	scale.setColumn (1, GLVector (0, this->mScale (1), 0));
+	scale.setColumn (2, GLVector (0, 0, this->mScale(2)));
+	base = scale * base;
 
 }
 
