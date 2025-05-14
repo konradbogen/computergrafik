@@ -23,6 +23,18 @@ void Model::setRotation(GLVector rotation) {
   this->mRotation (2) += rotation (2);
 }
 
+void Model::setTranslation(GLVector translation) {
+  this->mTranslation = this->mTranslation + translation;
+};
+
+void Model::setScale(GLVector scale) {
+  this->mScale =
+      GLVector(this->mScale(0) * scale(0), this->mScale(1) * scale(1),
+               this->mScale(2) * scale(2),
+
+      );
+};
+
 void Model::updateMatrix () {
   std::vector<Triangle> triangles = mTriangles;
   int nTriangles = triangles.size ();
