@@ -140,10 +140,10 @@ std::cout << res;
 
   punkt = matrix * punkt;
 
-  printf ("Punkt A: %f, %f, %f \n", punkt(0), punkt(1), punkt(2));
-  for (int i = 0; i < 4; i++) {
-    printf ("Matrix M: %f, %f, %f, %f \n", matrix.getColumn(0)(i), matrix.getColumn(1)(i), matrix.getColumn(2)(i), matrix.getColumn(3)(i));
-  }
+  // printf ("Punkt A: %f, %f, %f \n", punkt(0), punkt(1), punkt(2));
+  // for (int i = 0; i < 4; i++) {
+  //   printf ("Matrix M: %f, %f, %f, %f \n", matrix.getColumn(0)(i), matrix.getColumn(1)(i), matrix.getColumn(2)(i), matrix.getColumn(3)(i));
+  // }
 
   /* Aufgabenblatt 2, Aufgabe 3: Setzen Sie die Transformationen der Modelle */
 
