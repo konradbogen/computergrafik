@@ -427,4 +427,5 @@ CMakeFiles/CGPraktikum.dir/Model.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/math.h \
   /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLPoint.hpp \
   /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLVector.hpp \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/structs.hpp
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/structs.hpp \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath

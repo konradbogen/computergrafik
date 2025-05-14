@@ -20,17 +20,18 @@ void Model::setMaterial(Material material) {
 
 /* Aufgabenblatt 2, Aufgabe 3: Implementieren Sie die vier Methoden für die Transformationen hier */
 void Model::setRotation(GLVector rotation) {
-  this->mRotation (0) += rotation (0);
-  this->mRotation (1) += rotation (1);
-  this->mRotation (2) += rotation (2);
+  this->mRotation = rotation;
+  this->updateMatrix ();
 }
 
 void Model::setTranslation(GLVector translation) {
-  this->mTranslation = this->mTranslation + translation;
+  this->mTranslation = this->mTranslation;
+  this->updateMatrix ();
 };
 
 void Model::setScale(GLVector scale) {
-  this->mScale = GLVector(this->mScale(0) * scale(0), this->mScale(1) * scale(1), this->mScale(2) * scale(2));
+  this->mScale = scale;
+  this->updateMatrix ();
 };
 
 GLMatrix constructRotation (GLVector rotation) {

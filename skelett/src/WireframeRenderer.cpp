@@ -9,14 +9,17 @@
 ** (Aufgabenblatt 2 - Aufgabe 1)
 **/
 void WireframeRenderer::renderScene(Color color) {
-    std::vector<Model> models = this->mScene->getModels (); 
+    std::vector<Model> &models = this->mScene->getModels ();
+    models[0].setTranslation (GLVector (50, 0, 0));
     for (int i = 0; i < models.size(); i++) {
         Model model = models[i];
+        GLMatrix m = model.getTransformation ();
         std::vector<Triangle> triangles = model.mTriangles;
         for (int j = 1; j < triangles.size (); j++) {
-            GLPoint a = triangles[j].vertex[0];
-            GLPoint b = triangles[j].vertex[1];
-            GLPoint c = triangles[j].vertex[1];
+            GLPoint a = m * triangles[j].vertex[0];
+            printf ("%f \n", a);
+            GLPoint b = m * triangles[j].vertex[1];
+            GLPoint c = m * triangles[j].vertex[1];
             this->drawBresenhamLine (a, b, color);
             this->drawBresenhamLine (b, c, color);
             this->drawBresenhamLine (c, a, color);

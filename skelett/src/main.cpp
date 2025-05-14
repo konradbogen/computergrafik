@@ -129,18 +129,18 @@ std::cout << res;
    } */
 
   wireframeRenderer.renderScene(color);
-  
-  GLVector vektor = GLVector (1, 0, 0);
- 
   GLMatrix matrix = GLMatrix ();
   matrix.setColumn (0, GLVector (std::cos (0.5 * M_PI), std::sin (0.5 * M_PI), 0));
   matrix.setColumn (1, GLVector ((-1) * std::sin (0.5 * M_PI), std::cos (0.5 * M_PI), 0));
   matrix.setColumn (2, GLVector (0, 0, 2));
   matrix.setColumn (3, GLVector (0, 0, 0));
 
-  vektor = matrix * vektor;
+  GLVector vektor = GLVector (1, 0, 0);
+  GLPoint punkt = GLPoint (1, 0, 0);
 
-  printf ("Vektor A: %f, %f, %f \n", vektor(0), vektor(1), vektor(2));
+  punkt = matrix * punkt;
+
+  printf ("Punkt A: %f, %f, %f \n", punkt(0), punkt(1), punkt(2));
   for (int i = 0; i < 4; i++) {
     printf ("Matrix M: %f, %f, %f, %f \n", matrix.getColumn(0)(i), matrix.getColumn(1)(i), matrix.getColumn(2)(i), matrix.getColumn(3)(i));
   }
