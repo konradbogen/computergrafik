@@ -23,10 +23,19 @@
 
 int main(int argc, char **argv) {
   GLMatrix m = GLMatrix();
-  m.setColumn(1, GLVector(2, 0, 0));
-  GLVector v = GLVector(1, 1, 1);
-  GLVector res = m * v;
+  m.setColumn(0, GLVector(1, 2, 3));
+  m.setColumn(1, GLVector(4, 5, 6));
+  m.setColumn(2, GLVector(1, 2, 3));
+  m.setColumn(3, GLVector(4, 5, 6));
+  GLMatrix m2 = GLMatrix();
+  m2.setColumn(0, GLVector(1, 2, 3));
+  m2.setColumn(1, GLVector(4, 5, 6));
+  m2.setColumn(2, GLVector(1, 2, 3));
+  m2.setColumn(3, GLVector(4, 5, 6));
+  GLMatrix res = m * m2;
 
+std::cout << m;
+std::cout << m2;
 std::cout << res;
 
                          // Dimensionen des Ergebnisbildes im Konstruktor setzen

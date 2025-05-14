@@ -1,6 +1,7 @@
 #pragma once
 
 #include <array>
+#include <iostream>
 #include <vector>
 #include <limits>
 #include <memory>
@@ -60,31 +61,28 @@ inline GLVector operator*(const GLMatrix &lhs, const GLVector &rhs) {
 	return updated;
 }
 
-
-inline GLMatrix operator* (const GLMatrix &lhs, const GLMatrix &rhs) {
-  GLMatrix updated = GLMatrix ();
-  for (int i = 0; i < 4; i++) {
-    for (int j = 0; j < 4; j++) {
-      for (int x = 0; x < 4; x++) {
-        updated.getColumn(j)(i) += lhs.getColumn(x)(i) * rhs.getColumn(j)(x);
-      }
-    }
-  }
+inline GLPoint operator*(const GLMatrix &lhs, const GLPoint &rhs) {
+	GLPoint updated = GLPoint();
+	for (int i=0; i<3; i++) {
+		updated(i) = lhs.getColumn(0)(i) * rhs(0) + lhs.getColumn(1)(i) * rhs(1) + lhs.getColumn(2)(i) * rhs(2) + lhs.getColumn(3)(i);
+	}
+	return updated;
 }
 
-inline GLPoint operator* (const GLMatrix &m, const GLPoint &p) {
-  GLVector x = GLVector ();
-  x(0) = p(0);
-  x(1) = p(1);
-  x(2) = p(2);
-  x(3) = 1;
-  x = m*x;
-  GLPoint y = GLPoint ();
-  y(0) = x(0);
-  y(1) = x(1);
-  y(2) = y(2);
-  return y;
-} 
+inline GLMatrix operator*(const GLMatrix &lhs, const GLMatrix &rhs) {
+	GLMatrix updated = GLMatrix();
+	for (int i=0; i<4; i++) {
+		for (int j=0; j<4; j++) {
+			float sum = 0;
+			for (int k=0; k<4; k++) {
+				sum += lhs(i, k) * rhs(k, j);
+			}
+			// std::cout<<i<<";"<<sum<<"\n";
+			updated.setValue(i, j, sum);
+		}
+	}
+	return updated;
+}
 
 inline int sgn(int x) { return (x > 0) ? 1 : (x < 0) ? -1 : 0; }
 
