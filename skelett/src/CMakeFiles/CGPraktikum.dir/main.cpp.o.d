@@ -463,16 +463,16 @@ CMakeFiles/CGPraktikum.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/gethostuuid.h \
   /opt/homebrew/include/assimp/Importer.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/random \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/numeric \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
   /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Color.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLMatrix.hpp \
   /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLPoint.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLVector.hpp \
   /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Scene.hpp \
   /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Camera.hpp \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLMatrix.hpp \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLVector.hpp \
   /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/math.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/structs.hpp \
