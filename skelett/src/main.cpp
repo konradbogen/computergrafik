@@ -128,7 +128,6 @@ std::cout << res;
    - dy,  cy - dx, 0), color, colors [(i+1) % 2]);
    } */
 
-  wireframeRenderer.renderScene(color);
   GLMatrix matrix = GLMatrix ();
   matrix.setColumn (0, GLVector (std::cos (0.5 * M_PI), std::sin (0.5 * M_PI), 0));
   matrix.setColumn (1, GLVector ((-1) * std::sin (0.5 * M_PI), std::cos (0.5 * M_PI), 0));
@@ -146,9 +145,22 @@ std::cout << res;
   // }
 
   /* Aufgabenblatt 2, Aufgabe 3: Setzen Sie die Transformationen der Modelle */
+  std::vector<Model> &models = wireframeRenderer.mScene->getModels ();
+  Model *hase = &models[0];
+  Model *wurfel = &models[1];
+  hase->setTranslation (GLVector (400, 200, 0));
+  hase->setRotation (GLVector(0, (5/360) * 2 * M_PI , 0));
+  hase->setScale (GLVector(2, 2, 2));
+  printf("Translation");
+  wurfel->setTranslation (GLVector (150, 200, 0));
+  printf("Rotation");
+  wurfel->setRotation (GLVector((20.0/180.0) * M_PI, (45.0/180.0) * M_PI, 0));
+  printf("Skalierung");
+  wurfel->setScale (GLVector(0.5, 3, 0.5));
 
   /* Aufgabenblatt 2, Aufgabe 1: Rufen Sie Ihre renderScene-Methode hier auf */
-
+  wireframeRenderer.renderScene(color);
+  
   /* Setup der Camera - Erst ab Aufgabenblatt 3 relevant. */
   // Diese Einstellungen beziehen sich auf den world space
   // Beachten Sie, dass Sie in diesem Praktikum keine explizite Umwandlung in
