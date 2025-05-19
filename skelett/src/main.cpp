@@ -150,7 +150,7 @@ int main(int argc, char **argv) {
   Model *hase = &models[0];
   Model *wurfel = &models[1];
   printf("Hase Skalierung");
-  hase->setScale(GLVector(2, 2, 2));
+  hase->setScale(GLVector(2, -2, 2));
   printf("Hase Rotation");
   hase->setRotation(GLVector(0, (5.0 / 360) * 2 * M_PI, 0));
   printf("Hase Translation");

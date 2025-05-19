@@ -75,7 +75,11 @@ void Model::updateMatrix() {
   printf("Scaled Base\n");
   std::cout << base;
 
-  base = constructRotation(this->mRotation) * base;
+  GLMatrix constructed = constructRotation(this->mRotation);
+  printf("Constructed Rotation Matrix\n");
+  std::cout << constructed;
+
+  base = constructed * base;
 
   printf("Rotated Base\n");
   std::cout << base;
