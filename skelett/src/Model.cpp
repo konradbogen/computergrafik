@@ -55,7 +55,7 @@ GLMatrix constructRotation(GLVector rotation) {
   zRot.setColumn(1, GLVector(sin(rotation(2)), cos(rotation(2)), 0));
   zRot.setColumn(2, GLVector(0, 0, 1));
 
-  GLMatrix r = zRot * yRot * xRot;
+  GLMatrix r = zRot * (yRot * xRot);
   return r;
 }
 
