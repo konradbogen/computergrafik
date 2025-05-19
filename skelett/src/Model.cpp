@@ -65,19 +65,17 @@ void Model::updateMatrix() {
   printf("--------\n");
   printf("Init Base\n");
   std::cout << base;
+  base.setColumn(3, GLVector(0, 0, 0));
 
   GLMatrix scale = GLMatrix();
   scale.setColumn(0, GLVector(this->mScale(0), 0, 0));
   scale.setColumn(1, GLVector(0, this->mScale(1), 0));
   scale.setColumn(2, GLVector(0, 0, this->mScale(2)));
-  GLVector offset = base.getColumn (3);
   base = scale * base;
-  base.setColumn (3, offset);
 
   printf("Scaled Base\n");
   std::cout << base;
 
-  base.setColumn(3, GLVector(0, 0, 0));
   base = constructRotation(this->mRotation) * base;
 
   printf("Rotated Base\n");

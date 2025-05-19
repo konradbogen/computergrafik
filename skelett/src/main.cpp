@@ -149,16 +149,16 @@ int main(int argc, char **argv) {
   std::vector<Model> &models = wireframeRenderer.mScene->getModels();
   Model *hase = &models[0];
   Model *wurfel = &models[1];
-  hase->setTranslation(GLVector(400, 200, 0));
-  hase->setRotation(GLVector(0, (180.0 / 360) * 2 * M_PI, 0));
   hase->setScale(GLVector(2, 2, 2));
-  printf("Translation");
-  wurfel->setTranslation(GLVector(150, 200, 0));
-  printf("Rotation");
-  wurfel->setRotation(
-      GLVector((20.0 / 180.0) * M_PI, (45.0 / 180.0) * M_PI, 0));
+  hase->setRotation(GLVector(0, (5.0 / 360) * 2 * M_PI, 0));
+  hase->setTranslation(GLVector(400, 200, 0));
+
   printf("Skalierung");
   wurfel->setScale(GLVector(0.5, 3, 0.5));
+  printf("Rotation");
+  wurfel->setRotation( GLVector((-20 / 180.0) * M_PI, (45.0 / 180.0) * M_PI, 0));
+  printf("Translation");
+  wurfel->setTranslation(GLVector(150, 200, 0));
 
   /* Aufgabenblatt 2, Aufgabe 1: Rufen Sie Ihre renderScene-Methode hier auf */
   wireframeRenderer.renderScene(color);

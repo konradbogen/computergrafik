@@ -2,4 +2,5 @@
 
 cmake ..
 make
-./CGPraktikum
+./CGPraktikum ../results/test.ppm
+open ../results/test.ppm
