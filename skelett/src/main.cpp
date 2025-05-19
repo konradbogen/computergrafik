@@ -34,13 +34,12 @@ int main(int argc, char **argv) {
   m2.setColumn(3, GLVector(4, 5, 6));
   GLMatrix res = m * m2;
 
-std::cout << m;
-std::cout << m2;
-std::cout << res;
+  std::cout << m;
+  std::cout << m2;
+  std::cout << res;
 
-                         // Dimensionen des Ergebnisbildes im Konstruktor setzen
-                         std::shared_ptr<Image>
-                             img = std::make_shared<Image>(640, 480);
+  // Dimensionen des Ergebnisbildes im Konstruktor setzen
+  std::shared_ptr<Image> img = std::make_shared<Image>(640, 480);
 
   // Verwendete Modelle festlegen
   std::vector<std::string> path_vector;
@@ -128,39 +127,42 @@ std::cout << res;
    - dy,  cy - dx, 0), color, colors [(i+1) % 2]);
    } */
 
-  GLMatrix matrix = GLMatrix ();
-  matrix.setColumn (0, GLVector (std::cos (0.5 * M_PI), std::sin (0.5 * M_PI), 0));
-  matrix.setColumn (1, GLVector ((-1) * std::sin (0.5 * M_PI), std::cos (0.5 * M_PI), 0));
-  matrix.setColumn (2, GLVector (0, 0, 2));
-  matrix.setColumn (3, GLVector (0, 0, 0));
+  GLMatrix matrix = GLMatrix();
+  matrix.setColumn(0, GLVector(std::cos(0.5 * M_PI), std::sin(0.5 * M_PI), 0));
+  matrix.setColumn(
+      1, GLVector((-1) * std::sin(0.5 * M_PI), std::cos(0.5 * M_PI), 0));
+  matrix.setColumn(2, GLVector(0, 0, 2));
+  matrix.setColumn(3, GLVector(0, 0, 0));
 
-  GLVector vektor = GLVector (1, 0, 0);
-  GLPoint punkt = GLPoint (1, 0, 0);
+  GLVector vektor = GLVector(1, 0, 0);
+  GLPoint punkt = GLPoint(1, 0, 0);
 
   punkt = matrix * punkt;
 
   // printf ("Punkt A: %f, %f, %f \n", punkt(0), punkt(1), punkt(2));
   // for (int i = 0; i < 4; i++) {
-  //   printf ("Matrix M: %f, %f, %f, %f \n", matrix.getColumn(0)(i), matrix.getColumn(1)(i), matrix.getColumn(2)(i), matrix.getColumn(3)(i));
+  //   printf ("Matrix M: %f, %f, %f, %f \n", matrix.getColumn(0)(i),
+  //   matrix.getColumn(1)(i), matrix.getColumn(2)(i), matrix.getColumn(3)(i));
   // }
 
   /* Aufgabenblatt 2, Aufgabe 3: Setzen Sie die Transformationen der Modelle */
-  std::vector<Model> &models = wireframeRenderer.mScene->getModels ();
+  std::vector<Model> &models = wireframeRenderer.mScene->getModels();
   Model *hase = &models[0];
   Model *wurfel = &models[1];
-  hase->setTranslation (GLVector (400, 200, 0));
-  hase->setRotation (GLVector(0, (5/360) * 2 * M_PI , 0));
-  hase->setScale (GLVector(2, 2, 2));
+  hase->setTranslation(GLVector(400, 200, 0));
+  hase->setRotation(GLVector(0, (180.0 / 360) * 2 * M_PI, 0));
+  hase->setScale(GLVector(2, 2, 2));
   printf("Translation");
-  wurfel->setTranslation (GLVector (150, 200, 0));
+  wurfel->setTranslation(GLVector(150, 200, 0));
   printf("Rotation");
-  wurfel->setRotation (GLVector((20.0/180.0) * M_PI, (45.0/180.0) * M_PI, 0));
+  wurfel->setRotation(
+      GLVector((20.0 / 180.0) * M_PI, (45.0 / 180.0) * M_PI, 0));
   printf("Skalierung");
-  wurfel->setScale (GLVector(0.5, 3, 0.5));
+  wurfel->setScale(GLVector(0.5, 3, 0.5));
 
   /* Aufgabenblatt 2, Aufgabe 1: Rufen Sie Ihre renderScene-Methode hier auf */
   wireframeRenderer.renderScene(color);
-  
+
   /* Setup der Camera - Erst ab Aufgabenblatt 3 relevant. */
   // Diese Einstellungen beziehen sich auf den world space
   // Beachten Sie, dass Sie in diesem Praktikum keine explizite Umwandlung in
