@@ -156,7 +156,7 @@ int main(int argc, char **argv) {
   printf("Skalierung");
   wurfel->setScale(GLVector(0.5, 3, 0.5));
   printf("Rotation");
-  wurfel->setRotation( GLVector((-20 / 180.0) * M_PI, (45.0 / 180.0) * M_PI, 0));
+  wurfel->setRotation( GLVector((20 / 360.0) * 2 *  M_PI, (45.0 / 360.0) * 2 * M_PI, 0));
   printf("Translation");
   wurfel->setTranslation(GLVector(150, 200, 0));
 
