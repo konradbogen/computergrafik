@@ -22,22 +22,6 @@
 #include "math.hpp"
 
 int main(int argc, char **argv) {
-  GLMatrix m = GLMatrix();
-  m.setColumn(0, GLVector(1, 2, 3));
-  m.setColumn(1, GLVector(4, 5, 6));
-  m.setColumn(2, GLVector(1, 2, 3));
-  m.setColumn(3, GLVector(4, 5, 6));
-  GLMatrix m2 = GLMatrix();
-  m2.setColumn(0, GLVector(1, 2, 3));
-  m2.setColumn(1, GLVector(4, 5, 6));
-  m2.setColumn(2, GLVector(1, 2, 3));
-  m2.setColumn(3, GLVector(4, 5, 6));
-  GLMatrix res = m * m2;
-
-  std::cout << m;
-  std::cout << m2;
-  std::cout << res;
-
   // Dimensionen des Ergebnisbildes im Konstruktor setzen
   std::shared_ptr<Image> img = std::make_shared<Image>(640, 480);
 
@@ -127,18 +111,6 @@ int main(int argc, char **argv) {
    - dy,  cy - dx, 0), color, colors [(i+1) % 2]);
    } */
 
-  GLMatrix matrix = GLMatrix();
-  matrix.setColumn(0, GLVector(std::cos(0.5 * M_PI), std::sin(0.5 * M_PI), 0));
-  matrix.setColumn(
-      1, GLVector((-1) * std::sin(0.5 * M_PI), std::cos(0.5 * M_PI), 0));
-  matrix.setColumn(2, GLVector(0, 0, 2));
-  matrix.setColumn(3, GLVector(0, 0, 0));
-
-  GLVector vektor = GLVector(1, 0, 0);
-  GLPoint punkt = GLPoint(1, 0, 0);
-
-  punkt = matrix * punkt;
-
   // printf ("Punkt A: %f, %f, %f \n", punkt(0), punkt(1), punkt(2));
   // for (int i = 0; i < 4; i++) {
   //   printf ("Matrix M: %f, %f, %f, %f \n", matrix.getColumn(0)(i),
@@ -150,7 +122,7 @@ int main(int argc, char **argv) {
   Model *hase = &models[0];
   Model *wurfel = &models[1];
   printf("Hase Skalierung");
-  hase->setScale(GLVector(2, -2, 2));
+  hase->setScale(GLVector(2, 2, 2));
   printf("Hase Rotation");
   hase->setRotation(GLVector(0, (5.0 / 360) * 2 * M_PI, 0));
   printf("Hase Translation");
