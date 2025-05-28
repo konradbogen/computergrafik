@@ -56,9 +56,9 @@ inline double dotProduct(const GLVector &lhs, const GLVector &rhs) {
 inline GLVector operator*(const GLMatrix &lhs, const GLVector &rhs) {
 	GLVector updated = GLVector();
 	for (int i=0; i<3; i++) {
-		updated(i) = lhs.getColumn(0)(i) * rhs(0) + lhs.getColumn(1)(i) * rhs(1) + lhs.getColumn(2)(i) * rhs(2) + lhs.getColumn(3)(i);
+		updated(i) = lhs.getColumn(0)(i) * rhs(0) + lhs.getColumn(1)(i) * rhs(1) + lhs.getColumn(2)(i) * rhs(2);
 	}
-	return updated;
+	return updated; 
 }
 
 inline GLPoint operator*(const GLMatrix &lhs, const GLPoint &rhs) {
