@@ -60,10 +60,7 @@ GLMatrix constructRotation(GLVector rotation) {
 }
 
 void Model::updateMatrix() {
-  GLMatrix base = this->mMatrix;
-  printf("--------\n");
-  printf("Init Base\n");
-  std::cout << base;
+  GLMatrix base = this->mMatrix; 
   base.setColumn(3, GLVector(0, 0, 0));
 
   GLMatrix scale = GLMatrix();
@@ -72,32 +69,16 @@ void Model::updateMatrix() {
   scale.setColumn(2, GLVector(0, 0, this->mScale(2)));
   base = scale * base;
 
-  printf("Scaled Base\n");
-  std::cout << base;
-
   GLMatrix constructed = constructRotation(this->mRotation);
-  printf("Constructed Rotation Matrix\n");
-  std::cout << constructed;
-
   base = constructed * base;
-
-  printf("Rotated Base\n");
-  std::cout << base;
-
 
   GLMatrix transl = GLMatrix();
   base.setColumn(3, this->mTranslation + this->mMatrix.getColumn(3));
 
-  printf("Translated Base Base\n");
-  std::cout << base;
-  // base = transl * base;
-
   this->mMatrix = base;
   this->mRotation = GLVector();
   this->mTranslation = GLVector();
-  printf("Matrix T * S * R * M\n");
-  std::cout << base;
-  printf("--------\n");
+  
   this->mScale = GLVector(1, 1, 1);
   this->mRotation = GLVector();
   this->mTranslation = GLVector(0, 0, 0);

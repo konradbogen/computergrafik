@@ -29,6 +29,10 @@ int main(int argc, char **argv) {
   std::vector<std::string> path_vector;
   path_vector.push_back(std::string("../data/bunny/bunny_scaled.ply"));
   path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+
   // Erzeuge die Szene mit dem default Konstruktor und lade die Modelle
   auto scene = std::make_shared<Scene>();
   scene->load(path_vector);
@@ -121,22 +125,22 @@ int main(int argc, char **argv) {
   std::vector<Model> &models = wireframeRenderer.mScene->getModels();
   Model& hase = models[0]; //Alias
   Model& wurfel = models[1];
-  printf("Hase Skalierung");
   hase.setScale(GLVector(2, 2, 2));
-  printf("Hase Rotation");
-  hase.setRotation(GLVector(0, (5.0 / 360) * 2 * M_PI, 0));
-  printf("Hase Translation");
-  hase.setTranslation(GLVector(400, 200, 0));
+  hase.setRotation(GLVector(0, (170.0 / 360) * 2 * M_PI, 0));
+  hase.setTranslation(GLVector(0, -10, -30));
 
-  printf("Würfel Skalierung");  
   wurfel.setScale(GLVector(0.5, -3, 0.5));
-  printf("Würfel Rotation");
-  wurfel.setRotation( GLVector((20 / 360.0) * 2 *  M_PI, (45.0 / 360.0) * 2 * M_PI, (0.0 / 360.0) * 2 * M_PI));
-  printf("Würfel Translation");
-  wurfe.setTranslation(GLVector(150, 200, 0));
+  wurfel.setTranslation(GLVector(-60, -50, 0));
+
+  models[2].setTranslation (GLVector (60, 50, -50));
+
+  models[3].setTranslation (GLVector (-80, 10, -100));
+
+  models[4].setTranslation (GLVector (0, -100, 0));
+  models[4].setScale(GLVector(500.0, 0.01, 500));
 
   /* Aufgabenblatt 2, Aufgabe 1: Rufen Sie Ihre renderScene-Methode hier auf */
-  wireframeRenderer.renderScene(color);
+  //wireframeRenderer.renderScene(color);
 
   /* Setup der Camera - Erst ab Aufgabenblatt 3 relevant. */
   // Diese Einstellungen beziehen sich auf den world space
@@ -148,18 +152,36 @@ int main(int argc, char **argv) {
   /* Aufgabenblatt 3:  kommentieren Sie die Zeilen wieder ein, die eine Kamera
    * erzeugen und zur Scene hinzufügen*/
 
-  //  auto cam = std::make_shared<Camera>();
-  // GLPoint eye = GLPoint(0.0, 0.0, 300.0);
-  // cam->setEyePoint(eye);
-  // cam->setUp(GLVector(0.0, 1.0, 0.0));
-  // GLVector viewDirection = GLVector(0.0, 0, -1.0);
-  // viewDirection.normalize();
-  // cam->setViewDirection(viewDirection);
-  // cam->setSize(img->getWidth(), img->getHeight());
-  // scene->setCamera(cam);
+  auto cam = std::make_shared<Camera>();
+  GLPoint eye = GLPoint(0.0, 0.0, 200.0);
+  cam->setEyePoint(eye);
+  cam->setUp(GLVector(0.0, 1.0, 0.0));
+  GLVector viewDirection = GLVector(0.0, 0, -1.0);
+  viewDirection.normalize();
+  cam->setViewDirection(viewDirection);
+  cam->setSize(img->getWidth(), img->getHeight());
+  scene->setCamera(cam);
 
   /* Aufgabenblatt 3: Erzeugen Sie mindestens eine Kugel und fügen Sie diese zur
    * zene hinzu*/
+  Sphere a = Sphere ();
+  a.setPosition (GLPoint (-150.0, 0.0, -30.0));
+  a.setRadius (50.0);
+
+  Sphere b = Sphere ();
+  b.setPosition (GLPoint (150.0, 0.0, -30.0));
+  b.setRadius (50.0);
+
+  Material m = Material ();
+  m.color = color;
+  a.setMaterial (m);
+  b.setMaterial (m);
+
+  scene->addSphere (a);
+  scene->addSphere (b);
+
+  wireframeRenderer.renderScene(color);
+
 
   /* Aufgabenblatt 4: Setzen Sie materialeigenschaften für die Kugelen und die
    * odelle. Die Materialeigenschaften für eine Darstellung entsprechend der B
