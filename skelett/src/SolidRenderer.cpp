@@ -45,7 +45,9 @@ void SolidRenderer::computeImageRow(size_t rowNumber) {
     hitRecord.sphereId = -1;
     hitRecord.color = Color (1.0, 1.0, 1.0);
     hitRecord.parameter = 0; 
-    mScene->intersect (ray, hitRecord, EPSILON);
+    if (mScene->intersect (ray, hitRecord, EPSILON)) {
+      mImage->setValue (hitRecord.intersectionPoint(0), hitRecord.intersectionPoint(1), hitRecord.color);
+    };
   }
 }
 

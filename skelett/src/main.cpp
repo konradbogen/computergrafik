@@ -180,9 +180,8 @@ int main(int argc, char **argv) {
   scene->addSphere (a);
   scene->addSphere (b);
 
-  SolidRenderer solidRenderer = SolidRenderer ();
-  solidRenderer->mScene = scene;
-  wireframeRenderer.renderScene(color);
+  SolidRenderer solidRenderer = SolidRenderer (scene, img, cam);
+  solidRenderer.renderRaycast ();
 
 
   /* Aufgabenblatt 4: Setzen Sie materialeigenschaften für die Kugelen und die

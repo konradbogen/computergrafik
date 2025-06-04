@@ -16,27 +16,29 @@ Scene::Scene() {}
  * Gibt zurück ob ein gegebener Strahl ein Objekt (Modell oder Kugel) der Szene trifft
  *  (Aufgabenblatt 3)
  */
-bool Scene::intersect(const Ray &ray, HitRecord &hitRecord,
-                      const float epsilon) {
-    for (int i = 0; i < mModels.size (); i++) {
-      Model model = models[i];
+bool Scene::intersect(const Ray &ray, HitRecord &hitRecord, const float epsilon) {
+  bool hit = false;  
+  for (int i = 0; i < mModels.size (); i++) {
+      Model model = mModels[i];
       GLMatrix m = model.getTransformation ();
       std::vector<Triangle> triangles = model.mTriangles;
       for (int j = 0; j < triangles.size (); j++) {
+        Triangle tri;
         tri.vertex[0] = m * triangles[j].vertex[0];
         tri.vertex[1] = m * triangles[j].vertex[1];
         tri.vertex[2] = m * triangles[j].vertex[2];
-        if (triangleInteresect (ray, tri, hitRecord, epsilon)) {
+        if (triangleIntersect (ray, tri, hitRecord, epsilon)) {
 
         };
       }
     }
-    for (int i = 0; i < mSpheres.size (); i++ {
-      if (sphereIntersect (ray)) {
-
+    for (int i = 0; i < mSpheres.size (); i++) {
+      if (sphereIntersect (ray, mSpheres[i], hitRecord, epsilon)) {
+            hitRecord.sphereId = i;
+            hit = true;
       };
-    })
-    return false; // Platzhalter; entfernen bei der Implementierung
+    }
+    return hit;
 }
 
 /** Aufgabenblatt 3: Gibt zurück ob ein gegebener Strahl ein Dreieck  eines Modells der Szene trifft
@@ -52,40 +54,49 @@ bool Scene::triangleIntersect(const Ray &ray, const Triangle &triangle,
  *  Diese Methode sollte in Scene::intersect für jede Kugel aufgerufen werden
  *  Aufgabenblatt 4: Diese Methode befüllt den den HitRecord im Fall eines Treffers mit allen für das shading notwendigen informationen
 */
-bool Scene::sphereIntersect(const Ray &ray, const Sphere &sphere,
-                            HitRecord &hitRecord, const float epsilon) {
-    GLPoint &e = ray.origin;
-    GLPoint &v = ray.direction;
-    GLPoint &m = sphere.getPosition ();
-    GLPoint &r = sphere.getRadius ();
+bool Scene::sphereIntersect(const Ray &ray, const Sphere &sphere, HitRecord &hitRecord, const float epsilon) {
+    GLVector e;
+    e(0) = ray.origin(0);
+    e(1) = ray.origin(1);
+    e(2) = ray.origin(2);
 
-    int a   = v * v;
-    int b   = (2 * v * (e-m));
-    int c   = ((e-m)*(e-m) - r * r);
+    GLVector v;
+    v(0) = ray.direction(0);
+    v(1) = ray.direction(1);
+    v(2) = ray.direction(2);
 
-    int root = b*b - 4*a*c;
+    GLVector m;
+    m(0) = sphere.getPosition ()(0);
+    m(1) = sphere.getPosition ()(1);
+    m(2) = sphere.getPosition ()(2);
+
+    double r = (double) sphere.getRadius ();
+
+    double a   = dotProduct (v, v);
+    double b   = (dotProduct (2 * v, (e-m)));
+    double c   = (dotProduct((e-m), (e-m)) - r * r);
+
+    double root = sqrt (b*b - 4*a*c);
     if (root < 0 || c == 0) {
       return false;
     }
-    int z_p = (-1) * b + (b*b - 4*a*c);
-    int z_m = (-1) * b - (b*b - 4*a*c);
+    double z_p = (-1) * b + (b*b - 4*a*c);
+    double z_m = (-1) * b - (b*b - 4*a*c);
 
-    int t_1 = z_p / (2 * a);
-    int t_2 = z_m / (2 * a);
-    int t   = t_1 < t_2 ? t_1 : t2;
+    double t_1 = z_p / (2 * a);
+    double t_2 = z_m / (2 * a);
+    double t   = t_1 < t_2 ? t_1 : t_2;
 
-    GLPoint side_a;
-    GLPoint side_b;
-    side_a = a - c;
-    side_b = b - c;
+    GLVector normal = t * v;
+    normal(0) = normal(0) - m(0);
+    normal(1) = normal(1) - m(1);
+    normal(2) = normal(2) - m(2);
 
-    GLVector normal;
-    normal(0) = side_a(0)*side_b(1)-side_a(1)*side_b(0);
-    normal(1) = side_a(1)*side_b(2)-side_a(2)*side_b(1);
-    normal(2) = side_a(2)*side_b(0)-side_a(0)*side_b(2);
-
+    GLVector intersectionVector = e + t * v;
+    hitRecord.intersectionPoint(0) = intersectionVector(0);
+    hitRecord.intersectionPoint(1) = intersectionVector(1);
+    hitRecord.intersectionPoint(2) = intersectionVector(2);
     hitRecord.normal            = normal;
-    hitRecord.intersectionPoint = t * v;
     hitRecord.color             = sphere.getMaterial().color;
     hitRecord.rayDirection      = ray.direction;
 
