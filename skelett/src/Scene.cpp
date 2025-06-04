@@ -19,10 +19,22 @@ Scene::Scene() {}
 bool Scene::intersect(const Ray &ray, HitRecord &hitRecord,
                       const float epsilon) {
     for (int i = 0; i < mModels.size (); i++) {
-      
+      Model model = models[i];
+      GLMatrix m = model.getTransformation ();
+      std::vector<Triangle> triangles = model.mTriangles;
+      for (int j = 0; j < triangles.size (); j++) {
+        tri.vertex[0] = m * triangles[j].vertex[0];
+        tri.vertex[1] = m * triangles[j].vertex[1];
+        tri.vertex[2] = m * triangles[j].vertex[2];
+        if (triangleInteresect (ray, tri, hitRecord, epsilon)) {
+
+        };
+      }
     }
     for (int i = 0; i < mSpheres.size (); i++ {
-      ray = sphereIntersect (ray);
+      if (sphereIntersect (ray)) {
+
+      };
     })
     return false; // Platzhalter; entfernen bei der Implementierung
 }
@@ -42,7 +54,44 @@ bool Scene::triangleIntersect(const Ray &ray, const Triangle &triangle,
 */
 bool Scene::sphereIntersect(const Ray &ray, const Sphere &sphere,
                             HitRecord &hitRecord, const float epsilon) {
-    return false; // Platzhalter; entfernen bei der Implementierung
+    GLPoint &e = ray.origin;
+    GLPoint &v = ray.direction;
+    GLPoint &m = sphere.getPosition ();
+    GLPoint &r = sphere.getRadius ();
+
+    int a   = v * v;
+    int b   = (2 * v * (e-m));
+    int c   = ((e-m)*(e-m) - r * r);
+
+    int root = b*b - 4*a*c;
+    if (root < 0 || c == 0) {
+      return false;
+    }
+    int z_p = (-1) * b + (b*b - 4*a*c);
+    int z_m = (-1) * b - (b*b - 4*a*c);
+
+    int t_1 = z_p / (2 * a);
+    int t_2 = z_m / (2 * a);
+    int t   = t_1 < t_2 ? t_1 : t2;
+
+    GLPoint side_a;
+    GLPoint side_b;
+    side_a = a - c;
+    side_b = b - c;
+
+    GLVector normal;
+    normal(0) = side_a(0)*side_b(1)-side_a(1)*side_b(0);
+    normal(1) = side_a(1)*side_b(2)-side_a(2)*side_b(1);
+    normal(2) = side_a(2)*side_b(0)-side_a(0)*side_b(2);
+
+    hitRecord.normal            = normal;
+    hitRecord.intersectionPoint = t * v;
+    hitRecord.color             = sphere.getMaterial().color;
+    hitRecord.rayDirection      = ray.direction;
+
+
+
+    return true; // Platzhalter; entfernen bei der Implementierung
 }
 
 /**
