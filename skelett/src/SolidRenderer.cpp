@@ -37,6 +37,16 @@ void SolidRenderer::renderRaycast() {
  * Precondition: Sowohl mImage, mScene und mCamera  müssen gesetzt sein.
  */
 void SolidRenderer::computeImageRow(size_t rowNumber) {
+  for (int col = 0; col < mImage->getWidth(); col++) {
+    Ray ray = mCamera->getRay (col, rowNumber);
+    int pixel = rowNumber * mImage->getWidth () + col;
+    HitRecord hitRecord = HitRecord ();
+    hitRecord.triangleId = -1;
+    hitRecord.sphereId = -1;
+    hitRecord.color = Color (1.0, 1.0, 1.0);
+    hitRecord.parameter = 0; 
+    mScene->intersect (ray, hitRecord, EPSILON);
+  }
 }
 
 /**

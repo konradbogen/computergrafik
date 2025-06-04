@@ -180,6 +180,8 @@ int main(int argc, char **argv) {
   scene->addSphere (a);
   scene->addSphere (b);
 
+  SolidRenderer solidRenderer = SolidRenderer ();
+  solidRenderer->mScene = scene;
   wireframeRenderer.renderScene(color);
 
 
