@@ -18,7 +18,7 @@ Scene::Scene() {}
  */
 bool Scene::intersect(const Ray &ray, HitRecord &hitRecord, const float epsilon) {
   bool hit = false;  
-  for (int i = 0; i < mModels.size (); i++) {
+  /* for (int i = 0; i < mModels.size (); i++) {
       Model model = mModels[i];
       GLMatrix m = model.getTransformation ();
       std::vector<Triangle> triangles = model.mTriangles;
@@ -31,7 +31,7 @@ bool Scene::intersect(const Ray &ray, HitRecord &hitRecord, const float epsilon)
 
         };
       }
-    }
+    } */
     for (int i = 0; i < mSpheres.size (); i++) {
       if (sphereIntersect (ray, mSpheres[i], hitRecord, epsilon)) {
             hitRecord.sphereId = i;
@@ -73,34 +73,38 @@ bool Scene::sphereIntersect(const Ray &ray, const Sphere &sphere, HitRecord &hit
     double r = (double) sphere.getRadius ();
 
     double a   = dotProduct (v, v);
-    double b   = (dotProduct (2 * v, (e-m)));
+    double b   = 2 * dotProduct (v, (e-m));
     double c   = (dotProduct((e-m), (e-m)) - r * r);
 
-    double root = sqrt (b*b - 4*a*c);
-    if (root < 0 || c == 0) {
+    double discr = b*b - 4*a*c;
+    if (discr < 0 || c == 0) {
       return false;
     }
-    double z_p = (-1) * b + (b*b - 4*a*c);
-    double z_m = (-1) * b - (b*b - 4*a*c);
+    double z_p = (-1) * b + sqrt(discr);
+    double z_m = (-1) * b - sqrt(discr);
 
     double t_1 = z_p / (2 * a);
     double t_2 = z_m / (2 * a);
-    double t   = t_1 < t_2 ? t_1 : t_2;
 
-    GLVector normal = t * v;
-    normal(0) = normal(0) - m(0);
-    normal(1) = normal(1) - m(1);
-    normal(2) = normal(2) - m(2);
+    double t = -1.0;
+    if (t_1 > epsilon && t_2 > epsilon)
+        t = std::min(t_1, t_2);
+    else if (t_1 > epsilon)
+        t = t_1;
+    else if (t_2 > epsilon)
+        t = t_2;
+    else
+        return false;
 
     GLVector intersectionVector = e + t * v;
+    GLVector normal = intersectionVector - m;
+    normal.normalize ();
     hitRecord.intersectionPoint(0) = intersectionVector(0);
     hitRecord.intersectionPoint(1) = intersectionVector(1);
     hitRecord.intersectionPoint(2) = intersectionVector(2);
     hitRecord.normal            = normal;
     hitRecord.color             = sphere.getMaterial().color;
     hitRecord.rayDirection      = ray.direction;
-
-
 
     return true; // Platzhalter; entfernen bei der Implementierung
 }
