@@ -1,5 +1,5 @@
 CMakeFiles/CGPraktikum.dir/main.cpp.o: \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/main.cpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/main.cpp \
   /opt/homebrew/include/assimp/postprocess.h \
   /opt/homebrew/include/assimp/types.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/limits.h \
@@ -467,23 +467,23 @@ CMakeFiles/CGPraktikum.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/numeric \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Color.hpp \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLMatrix.hpp \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLPoint.hpp \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLVector.hpp \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Scene.hpp \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Camera.hpp \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/math.hpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/Color.hpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/GLMatrix.hpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/GLPoint.hpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/GLVector.hpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/Scene.hpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/Camera.hpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/math.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/structs.hpp \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Model.hpp \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Material.hpp \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Sphere.hpp \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/SolidRenderer.hpp \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Image.hpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/structs.hpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/Model.hpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/Material.hpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/Sphere.hpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/SolidRenderer.hpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/Image.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/WireframeRenderer.hpp
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/WireframeRenderer.hpp
