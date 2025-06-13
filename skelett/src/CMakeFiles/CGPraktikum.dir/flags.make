@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -isystem /opt/homebrew/include
 
-CXX_FLAGSarm64 = -O3 -DNDEBUG -arch arm64 -std=c++14 -Wall -Wfloat-conversion
+CXX_FLAGSarm64 = -g -arch arm64 -std=c++14 -Wall -Wfloat-conversion
 
-CXX_FLAGS = -O3 -DNDEBUG -arch arm64 -std=c++14 -Wall -Wfloat-conversion
+CXX_FLAGS = -g -arch arm64 -std=c++14 -Wall -Wfloat-conversion
 

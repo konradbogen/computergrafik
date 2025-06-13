@@ -1,6 +1,6 @@
 CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.o: \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLMatrix.cpp \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLMatrix.hpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/GLMatrix.cpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/GLMatrix.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -83,7 +83,7 @@ CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/move.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__undef_macros \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/limits \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLPoint.hpp \
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/GLPoint.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__locale \
@@ -419,4 +419,4 @@ CMakeFiles/CGPraktikum.dir/GLMatrix.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
-  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLVector.hpp
+  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/GLVector.hpp
