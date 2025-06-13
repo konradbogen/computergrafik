@@ -39,7 +39,6 @@ void SolidRenderer::renderRaycast() {
 void SolidRenderer::computeImageRow(size_t rowNumber) {
   for (int col = 0; col < mImage->getWidth(); col++) {
     Ray ray = mCamera->getRay (col, rowNumber);
-    int pixel = rowNumber * mImage->getWidth () + col;
     HitRecord hitRecord = HitRecord ();
     hitRecord.triangleId = -1;
     hitRecord.sphereId = -1;

@@ -36849,3 +36849,521 @@ events:
         
       exitCode: 2
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:67 (find_package)"
+    description: "Detecting C OpenMP compiler info"
+    directories:
+      source: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-VpvODA"
+      binary: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-VpvODA"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_C_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-VpvODA'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_eb9ce/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_eb9ce.dir/build.make CMakeFiles/cmTC_eb9ce.dir/build
+        Building C object CMakeFiles/cmTC_eb9ce.dir/OpenMPTryFlag.c.o
+        /usr/bin/cc   -Xclang -fopenmp -arch arm64 -MD -MT CMakeFiles/cmTC_eb9ce.dir/OpenMPTryFlag.c.o -MF CMakeFiles/cmTC_eb9ce.dir/OpenMPTryFlag.c.o.d -o CMakeFiles/cmTC_eb9ce.dir/OpenMPTryFlag.c.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-VpvODA/OpenMPTryFlag.c
+        /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-VpvODA/OpenMPTryFlag.c:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_eb9ce.dir/OpenMPTryFlag.c.o] Error 1
+        make: *** [cmTC_eb9ce/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:67 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-UACTwk"
+      binary: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-UACTwk"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-UACTwk'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e300a/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e300a.dir/build.make CMakeFiles/cmTC_e300a.dir/build
+        Building CXX object CMakeFiles/cmTC_e300a.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -arch arm64 -MD -MT CMakeFiles/cmTC_e300a.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_e300a.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_e300a.dir/OpenMPTryFlag.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-UACTwk/OpenMPTryFlag.cpp
+        /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-UACTwk/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_e300a.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_e300a/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:67 (find_package)"
+    description: "Detecting C OpenMP compiler info"
+    directories:
+      source: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-GATXVf"
+      binary: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-GATXVf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_C_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-GATXVf'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2e84b/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2e84b.dir/build.make CMakeFiles/cmTC_2e84b.dir/build
+        Building C object CMakeFiles/cmTC_2e84b.dir/OpenMPTryFlag.c.o
+        /usr/bin/cc   -Xclang -fopenmp -arch arm64 -MD -MT CMakeFiles/cmTC_2e84b.dir/OpenMPTryFlag.c.o -MF CMakeFiles/cmTC_2e84b.dir/OpenMPTryFlag.c.o.d -o CMakeFiles/cmTC_2e84b.dir/OpenMPTryFlag.c.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-GATXVf/OpenMPTryFlag.c
+        /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-GATXVf/OpenMPTryFlag.c:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_2e84b.dir/OpenMPTryFlag.c.o] Error 1
+        make: *** [cmTC_2e84b/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:67 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-DxpPzJ"
+      binary: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-DxpPzJ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-DxpPzJ'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_29903/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_29903.dir/build.make CMakeFiles/cmTC_29903.dir/build
+        Building CXX object CMakeFiles/cmTC_29903.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -arch arm64 -MD -MT CMakeFiles/cmTC_29903.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_29903.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_29903.dir/OpenMPTryFlag.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-DxpPzJ/OpenMPTryFlag.cpp
+        /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-DxpPzJ/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_29903.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_29903/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:67 (find_package)"
+    description: "Detecting C OpenMP compiler info"
+    directories:
+      source: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-PoMnxU"
+      binary: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-PoMnxU"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_C_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-PoMnxU'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_13756/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_13756.dir/build.make CMakeFiles/cmTC_13756.dir/build
+        Building C object CMakeFiles/cmTC_13756.dir/OpenMPTryFlag.c.o
+        /usr/bin/cc   -Xclang -fopenmp -arch arm64 -MD -MT CMakeFiles/cmTC_13756.dir/OpenMPTryFlag.c.o -MF CMakeFiles/cmTC_13756.dir/OpenMPTryFlag.c.o.d -o CMakeFiles/cmTC_13756.dir/OpenMPTryFlag.c.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-PoMnxU/OpenMPTryFlag.c
+        /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-PoMnxU/OpenMPTryFlag.c:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_13756.dir/OpenMPTryFlag.c.o] Error 1
+        make: *** [cmTC_13756/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:67 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-3rL5WG"
+      binary: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-3rL5WG"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-3rL5WG'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a0e15/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a0e15.dir/build.make CMakeFiles/cmTC_a0e15.dir/build
+        Building CXX object CMakeFiles/cmTC_a0e15.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -arch arm64 -MD -MT CMakeFiles/cmTC_a0e15.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_a0e15.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_a0e15.dir/OpenMPTryFlag.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-3rL5WG/OpenMPTryFlag.cpp
+        /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-3rL5WG/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_a0e15.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_a0e15/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:67 (find_package)"
+    description: "Detecting C OpenMP compiler info"
+    directories:
+      source: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-Q5A8lD"
+      binary: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-Q5A8lD"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_C_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-Q5A8lD'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_44cdc/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_44cdc.dir/build.make CMakeFiles/cmTC_44cdc.dir/build
+        Building C object CMakeFiles/cmTC_44cdc.dir/OpenMPTryFlag.c.o
+        /usr/bin/cc   -Xclang -fopenmp -arch arm64 -MD -MT CMakeFiles/cmTC_44cdc.dir/OpenMPTryFlag.c.o -MF CMakeFiles/cmTC_44cdc.dir/OpenMPTryFlag.c.o.d -o CMakeFiles/cmTC_44cdc.dir/OpenMPTryFlag.c.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-Q5A8lD/OpenMPTryFlag.c
+        /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-Q5A8lD/OpenMPTryFlag.c:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_44cdc.dir/OpenMPTryFlag.c.o] Error 1
+        make: *** [cmTC_44cdc/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:67 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-vnaUvA"
+      binary: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-vnaUvA"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-vnaUvA'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cf253/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_cf253.dir/build.make CMakeFiles/cmTC_cf253.dir/build
+        Building CXX object CMakeFiles/cmTC_cf253.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -arch arm64 -MD -MT CMakeFiles/cmTC_cf253.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_cf253.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_cf253.dir/OpenMPTryFlag.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-vnaUvA/OpenMPTryFlag.cpp
+        /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-vnaUvA/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_cf253.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_cf253/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:67 (find_package)"
+    description: "Detecting C OpenMP compiler info"
+    directories:
+      source: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-jOkv0t"
+      binary: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-jOkv0t"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_C_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-jOkv0t'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_90835/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_90835.dir/build.make CMakeFiles/cmTC_90835.dir/build
+        Building C object CMakeFiles/cmTC_90835.dir/OpenMPTryFlag.c.o
+        /usr/bin/cc   -Xclang -fopenmp -arch arm64 -MD -MT CMakeFiles/cmTC_90835.dir/OpenMPTryFlag.c.o -MF CMakeFiles/cmTC_90835.dir/OpenMPTryFlag.c.o.d -o CMakeFiles/cmTC_90835.dir/OpenMPTryFlag.c.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-jOkv0t/OpenMPTryFlag.c
+        /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-jOkv0t/OpenMPTryFlag.c:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_90835.dir/OpenMPTryFlag.c.o] Error 1
+        make: *** [cmTC_90835/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:67 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-YGb6hD"
+      binary: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-YGb6hD"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-YGb6hD'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4a226/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_4a226.dir/build.make CMakeFiles/cmTC_4a226.dir/build
+        Building CXX object CMakeFiles/cmTC_4a226.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -arch arm64 -MD -MT CMakeFiles/cmTC_4a226.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_4a226.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_4a226.dir/OpenMPTryFlag.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-YGb6hD/OpenMPTryFlag.cpp
+        /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-YGb6hD/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_4a226.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_4a226/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:67 (find_package)"
+    description: "Detecting C OpenMP compiler info"
+    directories:
+      source: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-ahWC4q"
+      binary: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-ahWC4q"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_C_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-ahWC4q'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_838de/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_838de.dir/build.make CMakeFiles/cmTC_838de.dir/build
+        Building C object CMakeFiles/cmTC_838de.dir/OpenMPTryFlag.c.o
+        /usr/bin/cc   -Xclang -fopenmp -arch arm64 -MD -MT CMakeFiles/cmTC_838de.dir/OpenMPTryFlag.c.o -MF CMakeFiles/cmTC_838de.dir/OpenMPTryFlag.c.o.d -o CMakeFiles/cmTC_838de.dir/OpenMPTryFlag.c.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-ahWC4q/OpenMPTryFlag.c
+        /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-ahWC4q/OpenMPTryFlag.c:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_838de.dir/OpenMPTryFlag.c.o] Error 1
+        make: *** [cmTC_838de/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:67 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-ibUXiP"
+      binary: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-ibUXiP"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-ibUXiP'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7e18b/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7e18b.dir/build.make CMakeFiles/cmTC_7e18b.dir/build
+        Building CXX object CMakeFiles/cmTC_7e18b.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -arch arm64 -MD -MT CMakeFiles/cmTC_7e18b.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_7e18b.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_7e18b.dir/OpenMPTryFlag.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-ibUXiP/OpenMPTryFlag.cpp
+        /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-ibUXiP/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_7e18b.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_7e18b/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:67 (find_package)"
+    description: "Detecting C OpenMP compiler info"
+    directories:
+      source: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-MZMkuj"
+      binary: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-MZMkuj"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_C_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-MZMkuj'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3454e/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3454e.dir/build.make CMakeFiles/cmTC_3454e.dir/build
+        Building C object CMakeFiles/cmTC_3454e.dir/OpenMPTryFlag.c.o
+        /usr/bin/cc   -Xclang -fopenmp -arch arm64 -MD -MT CMakeFiles/cmTC_3454e.dir/OpenMPTryFlag.c.o -MF CMakeFiles/cmTC_3454e.dir/OpenMPTryFlag.c.o.d -o CMakeFiles/cmTC_3454e.dir/OpenMPTryFlag.c.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-MZMkuj/OpenMPTryFlag.c
+        /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-MZMkuj/OpenMPTryFlag.c:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_3454e.dir/OpenMPTryFlag.c.o] Error 1
+        make: *** [cmTC_3454e/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:67 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-ReqpuS"
+      binary: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-ReqpuS"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/konradbogen/Documents/GitHub/computergrafik/skelett/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-ReqpuS'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_18fb0/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_18fb0.dir/build.make CMakeFiles/cmTC_18fb0.dir/build
+        Building CXX object CMakeFiles/cmTC_18fb0.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -arch arm64 -MD -MT CMakeFiles/cmTC_18fb0.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_18fb0.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_18fb0.dir/OpenMPTryFlag.cpp.o -c /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-ReqpuS/OpenMPTryFlag.cpp
+        /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/CMakeFiles/CMakeScratch/TryCompile-ReqpuS/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+        #include <omp.h>
+                 ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_18fb0.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_18fb0/fast] Error 2
+        
+      exitCode: 2
+...

@@ -24,7 +24,7 @@ bool Scene::intersect(const Ray &ray, HitRecord &hitRecord, const float epsilon)
       std::vector<Triangle> triangles = model.mTriangles;
       for (int j = 0; j < triangles.size (); j++) {
         Triangle tri;
-        tri.vertex[0] = m * triangles[j].vertex[0];
+        tri.vertex[0] =  m * triangles[j].vertex[0];
         tri.vertex[1] = m * triangles[j].vertex[1];
         tri.vertex[2] = m * triangles[j].vertex[2];
         // Recompute normal
@@ -91,33 +91,32 @@ bool Scene::triangleIntersect(const Ray &ray, const Triangle &triangle,
  
 
 
-        // Compute the main triangle area once
+    //MAIN DREIECK
     GLVector AB = vertex_1 - vertex_0;  // B - A
     GLVector AC = vertex_2 - vertex_0;  // C - A
     GLVector triangleNormal = crossProduct(AB, AC);
-    float triangleArea = triangleNormal.norm();
+    float triangleArea = triangleNormal.norm() / 2.0;
     triangleNormal.normalize(); // Unit vector for orientation
 
+    GLVector BP = vertex_1 - s;  // B - P
+    GLVector CP = vertex_2 - s;  // C - P
+    GLVector AP = vertex_0 - s;  // P - A
+
     // Calculate α = Area(P,B,C) / Area(A,B,C)
-    GLVector PB = vertex_1 - s;  // B - P
-    GLVector PC = vertex_2 - s;  // C - P
-    GLVector cross1 = crossProduct(PB, PC);
-    float alpha = dotProduct(cross1, triangleNormal) / triangleArea;
+    GLVector cross1 = crossProduct(BP, CP);
+    float alphaArea = fabs (cross1.norm() / 2);
 
     // Calculate β = Area(A,P,C) / Area(A,B,C)  
-    GLVector AP = s - vertex_0;  // P - A
-    GLVector AC_vec = vertex_2 - vertex_0;  // C - A
-    GLVector cross2 = crossProduct(AP, AC_vec);
-    float beta = dotProduct(cross2, triangleNormal) / triangleArea;
+    GLVector cross2 = crossProduct(AP, AC);
+    float betaArea = fabs (cross2.norm () / 2);
 
     // Calculate γ = Area(A,B,P) / Area(A,B,C)
-    GLVector AB_vec = vertex_1 - vertex_0;  // B - A
-    GLVector cross3 = crossProduct(AB_vec, AP);
-    float gamma = dotProduct(cross3, triangleNormal) / triangleArea;
+    GLVector cross3 = crossProduct(AP, AB);
+    float gammaArea = fabs (cross3.norm () / 2);
 
     // Check if point is inside triangle
-    if (alpha >= -epsilon && beta >= -epsilon && gamma >= -epsilon && 
-    fabs(alpha + beta + gamma - 1.0f) <= epsilon) {
+    if (fabs(alphaArea + betaArea + gammaArea - triangleArea) <= epsilon) {
+      // printf("alpha: %.4f beta: %.4f gamma: %.4f | triangle: %.4f \n", alphaArea, betaArea, gammaArea, triangleArea);
       hitRecord.intersectionPoint(0) = s(0);
       hitRecord.intersectionPoint(1) = s(1);
       hitRecord.intersectionPoint(2) = s(2);
