@@ -1,6 +1,6 @@
 CMakeFiles/CGPraktikum.dir/Image.cpp.o: \
-  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/Image.cpp \
-  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/Image.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Image.cpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Image.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdlib \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -423,4 +423,4 @@ CMakeFiles/CGPraktikum.dir/Image.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
-  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/Color.hpp
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Color.hpp

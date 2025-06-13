@@ -1,6 +1,6 @@
 CMakeFiles/CGPraktikum.dir/GLVector.cpp.o: \
-  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/GLVector.cpp \
-  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/GLVector.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLVector.cpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLVector.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \

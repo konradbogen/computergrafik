@@ -1,9 +1,9 @@
 CMakeFiles/CGPraktikum.dir/Sphere.cpp.o: \
-  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/Sphere.cpp \
-  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/Sphere.hpp \
-  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/Material.hpp \
-  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/Color.hpp \
-  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/math.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Sphere.cpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Sphere.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Material.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/Color.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/math.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -422,8 +422,8 @@ CMakeFiles/CGPraktikum.dir/Sphere.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
-  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/GLMatrix.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLMatrix.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/math.h \
-  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/GLPoint.hpp \
-  /Users/konradbogen/Documents/GitHub/compgra_clean/skelett/src/GLVector.hpp
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLPoint.hpp \
+  /Users/konradbogen/Documents/GitHub/computergrafik/skelett/src/GLVector.hpp

@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
 
   // Verwendete Modelle festlegen
   std::vector<std::string> path_vector;
-   /* path_vector.push_back(std::string("../data/bunny/bunny_scaled.ply")); */
+   path_vector.push_back(std::string("../data/bunny/bunny_scaled.ply")); 
 
    path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
    path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
@@ -183,24 +183,26 @@ int main(int argc, char **argv) {
 
   std::vector<Model> &s_models = scene->getModels();
 
-/*   Material m_3 = Material ();
-  m_3.color = Color(1.0, 0.0, 0.0);
-  s_models[0].setMaterial (m_3); */
+  Material m_3 = Material ();
+  m_3.color = Color(0.0, 1.0, 0.0);
+  s_models[0].setMaterial (m_3); 
+  s_models[1].setRotation(GLVector(0, (-170/360) * 2 * M_PI, -30));
+  s_models[1].setTranslation(GLVector(0, -10, -30));
 
   Material m_0 = Material ();
   m_0.color = Color(0.9, 0.9, 0.3);
-  s_models[0].setTranslation(GLVector(-60, -50, -0));
-  s_models[0].setMaterial (m_0);
+  s_models[1].setTranslation(GLVector(-60, -50, -0));
+  s_models[1].setMaterial (m_0);
  
   Material m_1 = Material ();
   m_1.color = Color(0.9, 0.4, 0.3);
-  s_models[1].setTranslation(GLVector(60, 50, -50));
-  s_models[1].setMaterial (m_1);
+  s_models[2].setTranslation(GLVector(60, 50, -50));
+  s_models[2].setMaterial (m_1);
 
   Material m_2 = Material ();
   m_2.color = Color(1.0, 0.0, 0.0);
-  s_models[2].setTranslation(GLVector(-80, 10, -100));
-  s_models[2].setMaterial (m_2);
+  s_models[3].setTranslation(GLVector(-80, 10, -100));
+  s_models[3].setMaterial (m_2);
 
 
 /* 
