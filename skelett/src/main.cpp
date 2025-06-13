@@ -27,11 +27,12 @@ int main(int argc, char **argv) {
 
   // Verwendete Modelle festlegen
   std::vector<std::string> path_vector;
-  path_vector.push_back(std::string("../data/bunny/bunny_scaled.ply"));
+   /* path_vector.push_back(std::string("../data/bunny/bunny_scaled.ply")); */
+
+   path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+   path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
   path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
-  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
-  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
-  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+ /* path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply")); */
 
   // Erzeuge die Szene mit dem default Konstruktor und lade die Modelle
   auto scene = std::make_shared<Scene>();
@@ -122,7 +123,7 @@ int main(int argc, char **argv) {
   // }
 
   /* Aufgabenblatt 2, Aufgabe 3: Setzen Sie die Transformationen der Modelle */
-  std::vector<Model> &models = wireframeRenderer.mScene->getModels();
+/*   std::vector<Model> &models = wireframeRenderer.mScene->getModels();
   Model& hase = models[0]; //Alias
   Model& wurfel = models[1];
   hase.setScale(GLVector(2, 2, 2));
@@ -137,7 +138,7 @@ int main(int argc, char **argv) {
   models[3].setTranslation (GLVector (-80, 10, -100));
 
   models[4].setTranslation (GLVector (0, -100, 0));
-  models[4].setScale(GLVector(500.0, 0.01, 500));
+  models[4].setScale(GLVector(500.0, 0.01, 500)); */
 
   /* Aufgabenblatt 2, Aufgabe 1: Rufen Sie Ihre renderScene-Methode hier auf */
   //wireframeRenderer.renderScene(color);
@@ -179,6 +180,36 @@ int main(int argc, char **argv) {
 
   scene->addSphere (a);
   scene->addSphere (b);
+
+  std::vector<Model> &s_models = scene->getModels();
+
+/*   Material m_3 = Material ();
+  m_3.color = Color(1.0, 0.0, 0.0);
+  s_models[0].setMaterial (m_3); */
+
+  Material m_0 = Material ();
+  m_0.color = Color(0.9, 0.9, 0.3);
+  s_models[0].setTranslation(GLVector(-60, -50, -0));
+  s_models[0].setMaterial (m_0);
+ 
+  Material m_1 = Material ();
+  m_1.color = Color(0.9, 0.4, 0.3);
+  s_models[1].setTranslation(GLVector(60, 50, -50));
+  s_models[1].setMaterial (m_1);
+
+  Material m_2 = Material ();
+  m_2.color = Color(1.0, 0.0, 0.0);
+  s_models[2].setTranslation(GLVector(-80, 10, -100));
+  s_models[2].setMaterial (m_2);
+
+
+/* 
+  Material m_3 = Material ();
+  m_3.color = Color(0.9, 0.9, 0.9);
+  s_models[3].setTranslation(GLVector(0, -100, 0));
+  s_models[3].setScale(GLVector(500, 0.01, 500));
+  s_models[3].setMaterial (m_3); */
+ 
 
   SolidRenderer solidRenderer = SolidRenderer (scene, img, cam);
   solidRenderer.renderRaycast ();

@@ -18,7 +18,7 @@ Scene::Scene() {}
  */
 bool Scene::intersect(const Ray &ray, HitRecord &hitRecord, const float epsilon) {
   bool hit = false;  
-  /* for (int i = 0; i < mModels.size (); i++) {
+    for (int i = 0; i < mModels.size (); i++) {
       Model model = mModels[i];
       GLMatrix m = model.getTransformation ();
       std::vector<Triangle> triangles = model.mTriangles;
@@ -27,11 +27,19 @@ bool Scene::intersect(const Ray &ray, HitRecord &hitRecord, const float epsilon)
         tri.vertex[0] = m * triangles[j].vertex[0];
         tri.vertex[1] = m * triangles[j].vertex[1];
         tri.vertex[2] = m * triangles[j].vertex[2];
+        // Recompute normal
+      GLVector e1 = tri.vertex[1] - tri.vertex[0];
+      GLVector e2 = tri.vertex[2] - tri.vertex[0];
+      tri.normal = crossProduct(e1, e2);
+      tri.normal.normalize();
         if (triangleIntersect (ray, tri, hitRecord, epsilon)) {
-
+          hitRecord.modelId = i;
+          hitRecord.triangleId = j;
+          hitRecord.color = model.getMaterial().color;
+          hit = true;
         };
       }
-    } */
+    } 
     for (int i = 0; i < mSpheres.size (); i++) {
       if (sphereIntersect (ray, mSpheres[i], hitRecord, epsilon)) {
             hitRecord.sphereId = i;
@@ -47,8 +55,81 @@ bool Scene::intersect(const Ray &ray, HitRecord &hitRecord, const float epsilon)
  */
 bool Scene::triangleIntersect(const Ray &ray, const Triangle &triangle,
                               HitRecord &hitRecord, const float epsilon) {
-    return false; // Platzhalter; entfernen bei der Implementierung
+    float t = 0;
+
+    GLVector vertex_0, vertex_1, vertex_2;   
+    vertex_0(0) = triangle.vertex[0](0);
+    vertex_0(1) = triangle.vertex[0](1);
+    vertex_0(2) = triangle.vertex[0](2);
+
+    vertex_1(0) = triangle.vertex[1](0);
+    vertex_1(1) = triangle.vertex[1](1);
+    vertex_1(2) = triangle.vertex[1](2);
+
+    vertex_2(0) = triangle.vertex[2](0);
+    vertex_2(1) = triangle.vertex[2](1);
+    vertex_2(2) = triangle.vertex[2](2);
+
+    if (fabs(dotProduct(ray.direction, triangle.normal)) > epsilon) {
+      GLVector ray_org_v;
+      ray_org_v (0) = ray.origin (0);
+      ray_org_v (1) = ray.origin (1);
+      ray_org_v (2) = ray.origin (2);
+	    t = (dotProduct ((vertex_0-ray_org_v), triangle.normal))/(dotProduct(ray.direction, triangle.normal));
+      if (t < epsilon) {
+        return false;
+      }
+    }else {
+      return false;
+    }
+
+    GLPoint s_p = ray.origin + t * ray.direction; 
+    GLVector s;
+    s(0) = s_p(0);
+    s(1) = s_p(1);
+    s(2) = s_p(2);
+ 
+
+
+        // Compute the main triangle area once
+    GLVector AB = vertex_1 - vertex_0;  // B - A
+    GLVector AC = vertex_2 - vertex_0;  // C - A
+    GLVector triangleNormal = crossProduct(AB, AC);
+    float triangleArea = triangleNormal.norm();
+    triangleNormal.normalize(); // Unit vector for orientation
+
+    // Calculate α = Area(P,B,C) / Area(A,B,C)
+    GLVector PB = vertex_1 - s;  // B - P
+    GLVector PC = vertex_2 - s;  // C - P
+    GLVector cross1 = crossProduct(PB, PC);
+    float alpha = dotProduct(cross1, triangleNormal) / triangleArea;
+
+    // Calculate β = Area(A,P,C) / Area(A,B,C)  
+    GLVector AP = s - vertex_0;  // P - A
+    GLVector AC_vec = vertex_2 - vertex_0;  // C - A
+    GLVector cross2 = crossProduct(AP, AC_vec);
+    float beta = dotProduct(cross2, triangleNormal) / triangleArea;
+
+    // Calculate γ = Area(A,B,P) / Area(A,B,C)
+    GLVector AB_vec = vertex_1 - vertex_0;  // B - A
+    GLVector cross3 = crossProduct(AB_vec, AP);
+    float gamma = dotProduct(cross3, triangleNormal) / triangleArea;
+
+    // Check if point is inside triangle
+    if (alpha >= -epsilon && beta >= -epsilon && gamma >= -epsilon && 
+    fabs(alpha + beta + gamma - 1.0f) <= epsilon) {
+      hitRecord.intersectionPoint(0) = s(0);
+      hitRecord.intersectionPoint(1) = s(1);
+      hitRecord.intersectionPoint(2) = s(2);
+      hitRecord.normal            = triangle.normal;
+      hitRecord.rayDirection      = ray.direction;
+      return true;
+    }else {
+      return false; 
+    }
 }
+
+
 
 /** Aufgabenblatt 3: Gibt zurück ob ein gegebener Strahl eine Kugel der Szene trifft
  *  Diese Methode sollte in Scene::intersect für jede Kugel aufgerufen werden
