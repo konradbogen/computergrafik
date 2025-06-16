@@ -3,7 +3,7 @@
 //#include <tbb/tbb.h>  // Include, nur wenn TBB genutzt werden soll
 
 #define EPSILON \
-  (1e-12)  // Epsilon um ungenauigkeiten und Rundungsfehler zu kompensieren
+  (1e-3)  // Epsilon um ungenauigkeiten und Rundungsfehler zu kompensieren
 
 /**
  ** Erstellt mittels Raycast das Rendering der mScene in das mImage
