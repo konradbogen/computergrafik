@@ -5,6 +5,7 @@
 
 #include <assimp/Importer.hpp>
 #include <cassert>
+#include <cfloat>
 #include <cstddef>
 #include <iostream>
 #include <vector>
@@ -19,9 +20,9 @@ bool Scene::intersect(const Ray &ray, HitRecord &hitRecord,
                       const float epsilon) {
   bool hit = false;
   for (int i = 0; i < mModels.size(); i++) {
-    if (i < 1) {
-      continue;
-    }
+    // if (i < 1) {
+    //   continue;
+    // }
     Model model = mModels[i];
     GLMatrix m = model.getTransformation();
     std::vector<Triangle> triangles = model.mTriangles;
@@ -99,8 +100,7 @@ bool Scene::triangleIntersect(const Ray &ray, const Triangle &triangle,
   GLVector AB = vertex_1 - vertex_0; // B - A
   GLVector AC = vertex_2 - vertex_0; // C - A
   GLVector triangleNormal = crossProduct(AB, AC);
-  float triangleArea = triangleNormal.norm() / 2.0;
-  triangleNormal.normalize(); // Unit vector for orientation
+  double triangleArea = triangleNormal.norm();
 
   GLVector BP = vertex_1 - s; // B - P
   GLVector CP = vertex_2 - s; // C - P
@@ -108,31 +108,43 @@ bool Scene::triangleIntersect(const Ray &ray, const Triangle &triangle,
 
   // Calculate α = Area(P,B,C) / Area(A,B,C)
   GLVector cross1 = crossProduct(BP, CP);
-  float alphaArea = fabs(cross1.norm() / 2);
+  double alpha = cross1.norm() / triangleArea;
+  if (alpha < -epsilon || alpha > 1 + epsilon) {
+    return false;
+  }
 
   // Calculate β = Area(A,P,C) / Area(A,B,C)
   GLVector cross2 = crossProduct(AP, AC);
-  float betaArea = fabs(cross2.norm() / 2);
+  double beta = cross2.norm() / triangleArea;
+  if (beta < -epsilon || beta > 1 + epsilon) {
+    return false;
+  }
 
   // Calculate γ = Area(A,B,P) / Area(A,B,C)
   GLVector cross3 = crossProduct(AP, AB);
-  float gammaArea = fabs(cross3.norm() / 2);
+  double gamma = cross3.norm() / triangleArea;
+  if (gamma < -epsilon || gamma > 1 + epsilon) {
+    return false;
+  }
+
+  if (fabs(alpha + gamma + beta - 1) > epsilon) {
+    return false;
+  }
 
   // Check if point is inside triangle
-  if (fabs(alphaArea + betaArea + gammaArea - triangleArea) <= epsilon) {
-    if ((hitRecord.sphereId < 0 && hitRecord.triangleId < 0) ||
-        (hitRecord.intersectionPoint - ray.origin).norm() >
-            (s_p - ray.origin).norm()) {
-      // printf("alpha: %.4f beta: %.4f gamma: %.4f | triangle: %.4f \n",
-      // alphaArea, betaArea, gammaArea, triangleArea);
-      hitRecord.intersectionPoint(0) = s(0);
-      hitRecord.intersectionPoint(1) = s(1);
-      hitRecord.intersectionPoint(2) = s(2);
-      hitRecord.normal = triangle.normal;
-      hitRecord.rayDirection = ray.direction;
-      hitRecord.triangleId = 1;
-      return true;
-    }
+  // float diff = fabs(alphaArea + betaArea + gammaArea - triangleArea);
+  if ((hitRecord.sphereId < 0 && hitRecord.triangleId < 0) ||
+      (hitRecord.intersectionPoint - ray.origin).norm() >
+          (s_p - ray.origin).norm()) {
+    // printf("alpha: %.4f beta: %.4f gamma: %.4f | triangle: %.4f \n",
+    // alphaArea, betaArea, gammaArea, triangleArea);
+    hitRecord.intersectionPoint(0) = s(0);
+    hitRecord.intersectionPoint(1) = s(1);
+    hitRecord.intersectionPoint(2) = s(2);
+    hitRecord.normal = triangle.normal;
+    hitRecord.rayDirection = ray.direction;
+    hitRecord.triangleId = 1;
+    return true;
   }
   return false;
 }

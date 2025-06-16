@@ -186,7 +186,7 @@ int main(int argc, char **argv) {
   Material m_0 = Material();
   m_0.color = Color(0.0, 1.0, 0.0);
   s_models[0].setMaterial(m_0);
-  s_models[0].setRotation(GLVector(0, (-170 / 360) * 2 * M_PI, -30));
+  s_models[0].setRotation(GLVector(0, (-170 / 360) * 2 * M_PI, 0));
   s_models[0].setTranslation(GLVector(0, -10, -30));
 
   Material m_1 = Material();

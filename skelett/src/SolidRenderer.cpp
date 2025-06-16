@@ -18,17 +18,17 @@ void SolidRenderer::renderRaycast() {
 
   // Ohne parallelisierung:
     
-  for(size_t i = 0; i < mImage->getHeight(); ++i ){
-          computeImageRow( i );
-   }
+  // for(size_t i = 0; i < mImage->getHeight(); ++i ){
+  //         computeImageRow( i );
+  //  }
 
   //  Parallelisierung mit OpenMP:
     
-  //#pragma omp parallel for
-  //    for(size_t i = 0; i < mImage->getHeight(); ++i )
-  //    {
-  //        computeImageRow( i );
-  //    }
+  #pragma omp parallel for
+     for(size_t i = 0; i < mImage->getHeight(); ++i )
+     {
+         computeImageRow( i );
+     }
 
 }
 
