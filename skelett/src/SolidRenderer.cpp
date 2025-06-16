@@ -37,7 +37,10 @@ void SolidRenderer::renderRaycast() {
  * Precondition: Sowohl mImage, mScene und mCamera  müssen gesetzt sein.
  */
 void SolidRenderer::computeImageRow(size_t rowNumber) {
-  for (int col = 0; col < mImage->getWidth(); col++) {
+  printf("Progress: %lu / %lu\n", rowNumber, mImage ->getHeight());
+  int width = mImage ->getWidth();
+  for (int col = 0; col < width; col++) {
+
     Ray ray = mCamera->getRay (col, rowNumber);
     HitRecord hitRecord = HitRecord ();
     hitRecord.triangleId = -1;

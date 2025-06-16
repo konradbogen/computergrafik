@@ -27,12 +27,12 @@ int main(int argc, char **argv) {
 
   // Verwendete Modelle festlegen
   std::vector<std::string> path_vector;
-   path_vector.push_back(std::string("../data/bunny/bunny_scaled.ply")); 
+  path_vector.push_back(std::string("../data/bunny/bunny_scaled.ply"));
 
-   path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
-   path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
   path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
- /* path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply")); */
+  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
 
   // Erzeuge die Szene mit dem default Konstruktor und lade die Modelle
   auto scene = std::make_shared<Scene>();
@@ -123,25 +123,25 @@ int main(int argc, char **argv) {
   // }
 
   /* Aufgabenblatt 2, Aufgabe 3: Setzen Sie die Transformationen der Modelle */
-/*   std::vector<Model> &models = wireframeRenderer.mScene->getModels();
-  Model& hase = models[0]; //Alias
-  Model& wurfel = models[1];
-  hase.setScale(GLVector(2, 2, 2));
-  hase.setRotation(GLVector(0, (170.0 / 360) * 2 * M_PI, 0));
-  hase.setTranslation(GLVector(0, -10, -30));
+  /*   std::vector<Model> &models = wireframeRenderer.mScene->getModels();
+    Model& hase = models[0]; //Alias
+    Model& wurfel = models[1];
+    hase.setScale(GLVector(2, 2, 2));
+    hase.setRotation(GLVector(0, (170.0 / 360) * 2 * M_PI, 0));
+    hase.setTranslation(GLVector(0, -10, -30));
 
-  wurfel.setScale(GLVector(0.5, -3, 0.5));
-  wurfel.setTranslation(GLVector(-60, -50, 0));
+    wurfel.setScale(GLVector(0.5, -3, 0.5));
+    wurfel.setTranslation(GLVector(-60, -50, 0));
 
-  models[2].setTranslation (GLVector (60, 50, -50));
+    models[2].setTranslation (GLVector (60, 50, -50));
 
-  models[3].setTranslation (GLVector (-80, 10, -100));
+    models[3].setTranslation (GLVector (-80, 10, -100));
 
-  models[4].setTranslation (GLVector (0, -100, 0));
-  models[4].setScale(GLVector(500.0, 0.01, 500)); */
+    models[4].setTranslation (GLVector (0, -100, 0));
+    models[4].setScale(GLVector(500.0, 0.01, 500)); */
 
   /* Aufgabenblatt 2, Aufgabe 1: Rufen Sie Ihre renderScene-Methode hier auf */
-  //wireframeRenderer.renderScene(color);
+  // wireframeRenderer.renderScene(color);
 
   /* Setup der Camera - Erst ab Aufgabenblatt 3 relevant. */
   // Diese Einstellungen beziehen sich auf den world space
@@ -165,57 +165,53 @@ int main(int argc, char **argv) {
 
   /* Aufgabenblatt 3: Erzeugen Sie mindestens eine Kugel und fügen Sie diese zur
    * zene hinzu*/
-  Sphere a = Sphere ();
-  a.setPosition (GLPoint (-150.0, 0.0, -30.0));
-  a.setRadius (50.0);
+  Sphere a = Sphere();
+  a.setPosition(GLPoint(-150.0, 0.0, -30.0));
+  a.setRadius(50.0);
 
-  Sphere b = Sphere ();
-  b.setPosition (GLPoint (150.0, 0.0, -30.0));
-  b.setRadius (50.0);
+  Sphere b = Sphere();
+  b.setPosition(GLPoint(150.0, 0.0, -30.0));
+  b.setRadius(50.0);
 
-  Material m = Material ();
+  Material m = Material();
   m.color = color;
-  a.setMaterial (m);
-  b.setMaterial (m);
+  a.setMaterial(m);
+  b.setMaterial(m);
 
-  scene->addSphere (a);
-  scene->addSphere (b);
+  scene->addSphere(a);
+  scene->addSphere(b);
 
   std::vector<Model> &s_models = scene->getModels();
 
-  Material m_3 = Material ();
-  m_3.color = Color(0.0, 1.0, 0.0);
-  s_models[0].setMaterial (m_3); 
-  s_models[1].setRotation(GLVector(0, (-170/360) * 2 * M_PI, -30));
-  s_models[1].setTranslation(GLVector(0, -10, -30));
+  Material m_0 = Material();
+  m_0.color = Color(0.0, 1.0, 0.0);
+  s_models[0].setMaterial(m_0);
+  s_models[0].setRotation(GLVector(0, (-170 / 360) * 2 * M_PI, -30));
+  s_models[0].setTranslation(GLVector(0, -10, -30));
 
-  Material m_0 = Material ();
-  m_0.color = Color(0.9, 0.9, 0.3);
+  Material m_1 = Material();
+  m_1.color = Color(0.9, 0.9, 0.3);
   s_models[1].setTranslation(GLVector(-60, -50, -0));
-  s_models[1].setMaterial (m_0);
- 
-  Material m_1 = Material ();
-  m_1.color = Color(0.9, 0.4, 0.3);
+  s_models[1].setMaterial(m_1);
+
+  Material m_2 = Material();
+  m_2.color = Color(0.9, 0.4, 0.3);
   s_models[2].setTranslation(GLVector(60, 50, -50));
-  s_models[2].setMaterial (m_1);
+  s_models[2].setMaterial(m_2);
 
-  Material m_2 = Material ();
-  m_2.color = Color(1.0, 0.0, 0.0);
+  Material m_3 = Material();
+  m_3.color = Color(1.0, 0.0, 0.0);
   s_models[3].setTranslation(GLVector(-80, 10, -100));
-  s_models[3].setMaterial (m_2);
+  s_models[3].setMaterial(m_3);
 
+  Material m_4 = Material();
+  m_4.color = Color(0.9, 0.9, 0.9);
+  s_models[4].setTranslation(GLVector(0, -100, 0));
+  s_models[4].setScale(GLVector(500, 0.01, 500));
+  s_models[4].setMaterial(m_4);
 
-/* 
-  Material m_3 = Material ();
-  m_3.color = Color(0.9, 0.9, 0.9);
-  s_models[3].setTranslation(GLVector(0, -100, 0));
-  s_models[3].setScale(GLVector(500, 0.01, 500));
-  s_models[3].setMaterial (m_3); */
- 
-
-  SolidRenderer solidRenderer = SolidRenderer (scene, img, cam);
-  solidRenderer.renderRaycast ();
-
+  SolidRenderer solidRenderer = SolidRenderer(scene, img, cam);
+  solidRenderer.renderRaycast();
 
   /* Aufgabenblatt 4: Setzen Sie materialeigenschaften für die Kugelen und die
    * odelle. Die Materialeigenschaften für eine Darstellung entsprechend der B

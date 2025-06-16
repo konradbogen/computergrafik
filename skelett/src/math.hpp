@@ -31,7 +31,6 @@ inline GLPoint operator+(const GLPoint &p1, const GLVector &p2) {
   return GLPoint(p1(0) + p2(0), p1(1) + p2(1), p1(2) + p2(2));
 }
 
-
 inline GLPoint operator+(const GLPoint &p1, const GLPoint &p2) {
   return GLPoint(p1(0) + p2(0), p1(1) + p2(1), p1(2) + p2(2));
 }

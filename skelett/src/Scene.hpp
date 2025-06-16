@@ -3,7 +3,6 @@
 #include "Camera.hpp"
 #include "Model.hpp"
 #include "Sphere.hpp"
-#include "math.hpp"
 #include "structs.hpp"
 
 class Scene {

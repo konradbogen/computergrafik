@@ -19,6 +19,9 @@ bool Scene::intersect(const Ray &ray, HitRecord &hitRecord,
                       const float epsilon) {
   bool hit = false;
   for (int i = 0; i < mModels.size(); i++) {
+    if (i < 1) {
+      continue;
+    }
     Model model = mModels[i];
     GLMatrix m = model.getTransformation();
     std::vector<Triangle> triangles = model.mTriangles;
@@ -117,17 +120,21 @@ bool Scene::triangleIntersect(const Ray &ray, const Triangle &triangle,
 
   // Check if point is inside triangle
   if (fabs(alphaArea + betaArea + gammaArea - triangleArea) <= epsilon) {
-    // printf("alpha: %.4f beta: %.4f gamma: %.4f | triangle: %.4f \n",
-    // alphaArea, betaArea, gammaArea, triangleArea);
-    hitRecord.intersectionPoint(0) = s(0);
-    hitRecord.intersectionPoint(1) = s(1);
-    hitRecord.intersectionPoint(2) = s(2);
-    hitRecord.normal = triangle.normal;
-    hitRecord.rayDirection = ray.direction;
-    return true;
-  } else {
-    return false;
+    if ((hitRecord.sphereId < 0 && hitRecord.triangleId < 0) ||
+        (hitRecord.intersectionPoint - ray.origin).norm() >
+            (s_p - ray.origin).norm()) {
+      // printf("alpha: %.4f beta: %.4f gamma: %.4f | triangle: %.4f \n",
+      // alphaArea, betaArea, gammaArea, triangleArea);
+      hitRecord.intersectionPoint(0) = s(0);
+      hitRecord.intersectionPoint(1) = s(1);
+      hitRecord.intersectionPoint(2) = s(2);
+      hitRecord.normal = triangle.normal;
+      hitRecord.rayDirection = ray.direction;
+      hitRecord.triangleId = 1;
+      return true;
+    }
   }
+  return false;
 }
 
 /** Aufgabenblatt 3: Gibt zurück ob ein gegebener Strahl eine Kugel der Szene
@@ -179,16 +186,25 @@ bool Scene::sphereIntersect(const Ray &ray, const Sphere &sphere,
     return false;
 
   GLVector intersectionVector = e + t * v;
+  GLPoint s_p = GLPoint(intersectionVector(0), intersectionVector(1),
+                        intersectionVector(2));
   GLVector normal = intersectionVector - m;
   normal.normalize();
-  hitRecord.intersectionPoint(0) = intersectionVector(0);
-  hitRecord.intersectionPoint(1) = intersectionVector(1);
-  hitRecord.intersectionPoint(2) = intersectionVector(2);
-  hitRecord.normal = normal;
-  hitRecord.color = sphere.getMaterial().color;
-  hitRecord.rayDirection = ray.direction;
 
-  return true; // Platzhalter; entfernen bei der Implementierung
+  if ((hitRecord.sphereId < 0 && hitRecord.triangleId < 0) ||
+      (hitRecord.intersectionPoint - ray.origin).norm() >
+          (s_p - ray.origin).norm()) {
+    hitRecord.intersectionPoint(0) = intersectionVector(0);
+    hitRecord.intersectionPoint(1) = intersectionVector(1);
+    hitRecord.intersectionPoint(2) = intersectionVector(2);
+    hitRecord.normal = normal;
+    hitRecord.color = sphere.getMaterial().color;
+    hitRecord.rayDirection = ray.direction;
+    hitRecord.sphereId = 1;
+
+    return true; // Platzhalter; entfernen bei der Implementierung
+  }
+  return false;
 }
 
 /**
@@ -240,7 +256,8 @@ void Scene::load(const std::vector<std::string> &pFiles) {
                                        tri.vertex[2] - tri.vertex[0]);
         normal.normalize();
         tri.normal = normal;
-        // Jedes Dreieck zum Vector der Dreiecke des aktuellen Models hinzufügen
+        // Jedes Dreieck zum Vector der Dreiecke des aktuellen Models
+        // hinzufügen
         model.mTriangles.push_back(tri);
       }
     }
