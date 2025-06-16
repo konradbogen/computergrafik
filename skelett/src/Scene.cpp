@@ -20,9 +20,6 @@ bool Scene::intersect(const Ray &ray, HitRecord &hitRecord,
                       const float epsilon) {
   bool hit = false;
   for (int i = 0; i < mModels.size(); i++) {
-    // if (i < 1) {
-    //   continue;
-    // }
     Model model = mModels[i];
     GLMatrix m = model.getTransformation();
     std::vector<Triangle> triangles = model.mTriangles;
@@ -60,7 +57,7 @@ bool Scene::intersect(const Ray &ray, HitRecord &hitRecord,
  */
 bool Scene::triangleIntersect(const Ray &ray, const Triangle &triangle,
                               HitRecord &hitRecord, const float epsilon) {
-  float t = 0;
+  double t = 0;
 
   GLVector vertex_0, vertex_1, vertex_2;
   vertex_0(0) = triangle.vertex[0](0);

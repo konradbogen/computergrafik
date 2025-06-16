@@ -1,9 +1,9 @@
 #include "SolidRenderer.hpp"
 
-//#include <tbb/tbb.h>  // Include, nur wenn TBB genutzt werden soll
+// #include <tbb/tbb.h>  // Include, nur wenn TBB genutzt werden soll
 
-#define EPSILON \
-  (1e-3)  // Epsilon um ungenauigkeiten und Rundungsfehler zu kompensieren
+#define EPSILON                                                                \
+  (1e-12) // Epsilon um ungenauigkeiten und Rundungsfehler zu kompensieren
 
 /**
  ** Erstellt mittels Raycast das Rendering der mScene in das mImage
@@ -17,55 +17,66 @@ void SolidRenderer::renderRaycast() {
   // Parallelisierbarkeit zu verbessern
 
   // Ohne parallelisierung:
-    
+
   // for(size_t i = 0; i < mImage->getHeight(); ++i ){
   //         computeImageRow( i );
   //  }
 
   //  Parallelisierung mit OpenMP:
-    
-  #pragma omp parallel for
-     for(size_t i = 0; i < mImage->getHeight(); ++i )
-     {
-         computeImageRow( i );
-     }
 
+  for (size_t i = 0; i < mImage->getHeight() / 5; ++i) {
+    printf("x");
+  }
+  printf("\n");
+#pragma omp parallel for
+  for (size_t i = 0; i < mImage->getHeight(); ++i) {
+    computeImageRow(i);
+  }
+  printf("\n");
 }
 
 /**
- * Aufgabenblatt 3: Hier wird das Raycasting implementiert. Siehe Aufgabenstellung!
- * Precondition: Sowohl mImage, mScene und mCamera  müssen gesetzt sein.
+ * Aufgabenblatt 3: Hier wird das Raycasting implementiert. Siehe
+ * Aufgabenstellung! Precondition: Sowohl mImage, mScene und mCamera  müssen
+ * gesetzt sein.
  */
 void SolidRenderer::computeImageRow(size_t rowNumber) {
-  printf("Progress: %lu / %lu\n", rowNumber, mImage ->getHeight());
-  int width = mImage ->getWidth();
+  float r = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
+  if (r < 1.0 / 4.8) {
+    printf("o");
+    // std::cout << "o\n";
+    std::flush(std::cout);
+  }
+  // printf("\n", rowNumber, mImage->getHeight());
+  int width = mImage->getWidth();
   for (int col = 0; col < width; col++) {
 
-    Ray ray = mCamera->getRay (col, rowNumber);
-    HitRecord hitRecord = HitRecord ();
+    Ray ray = mCamera->getRay(col, rowNumber);
+    HitRecord hitRecord = HitRecord();
     hitRecord.triangleId = -1;
     hitRecord.sphereId = -1;
-    hitRecord.color = Color (1.0, 1.0, 1.0);
+    hitRecord.color = Color(1.0, 1.0, 1.0);
     hitRecord.parameter = 0;
     GLVector zeroNormal = GLVector();
     zeroNormal(0) = 0;
     zeroNormal(1) = 0;
     zeroNormal(2) = 0;
     hitRecord.normal = zeroNormal;
-    if (mScene->intersect (ray, hitRecord, EPSILON)) {
+    if (mScene->intersect(ray, hitRecord, EPSILON)) {
       shade(hitRecord);
-      mImage->setValue (col, rowNumber, hitRecord.color);
+      mImage->setValue(col, rowNumber, hitRecord.color);
     };
   }
 }
 
 /**
- *  Aufgabenblatt 4: Hier wird das raytracing implementiert. Siehe Aufgabenstellung!
+ *  Aufgabenblatt 4: Hier wird das raytracing implementiert. Siehe
+ * Aufgabenstellung!
  */
 void SolidRenderer::shade(HitRecord &r) {
   if (r.triangleId != -1) {
-      r.color = mScene->getModels()[r.modelId].getMaterial().color;
-    }else if (r.sphereId != -1) {
-      r.color = mScene->getSpheres()[r.sphereId].getMaterial().color;
-    } 
+    r.color = mScene->getModels()[r.modelId].getMaterial().color;
+  } else if (r.sphereId != -1) {
+    r.color = mScene->getSpheres()[r.sphereId].getMaterial().color;
+  }
 }
