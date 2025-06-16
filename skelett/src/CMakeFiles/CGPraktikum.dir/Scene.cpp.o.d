@@ -466,4 +466,8 @@ CMakeFiles/CGPraktikum.dir/Scene.cpp.o: \
   /opt/homebrew/include/assimp/material.inl \
   /opt/homebrew/include/assimp/anim.h \
   /opt/homebrew/include/assimp/metadata.h \
-  /opt/homebrew/include/assimp/Importer.hpp
+  /opt/homebrew/include/assimp/Importer.hpp \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cfloat \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include/float.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/float.h

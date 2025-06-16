@@ -46,7 +46,12 @@ void SolidRenderer::computeImageRow(size_t rowNumber) {
     hitRecord.triangleId = -1;
     hitRecord.sphereId = -1;
     hitRecord.color = Color (1.0, 1.0, 1.0);
-    hitRecord.parameter = 0; 
+    hitRecord.parameter = 0;
+    GLVector zeroNormal = GLVector();
+    zeroNormal(0) = 0;
+    zeroNormal(1) = 0;
+    zeroNormal(2) = 0;
+    hitRecord.normal = zeroNormal;
     if (mScene->intersect (ray, hitRecord, EPSILON)) {
       mImage->setValue (col, rowNumber, hitRecord.color);
     };

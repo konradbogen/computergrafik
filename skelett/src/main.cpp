@@ -173,10 +173,13 @@ int main(int argc, char **argv) {
   b.setPosition(GLPoint(150.0, 0.0, -30.0));
   b.setRadius(50.0);
 
-  Material m = Material();
-  m.color = color;
-  a.setMaterial(m);
-  b.setMaterial(m);
+  Material m_sphere_1 = Material();
+  m_sphere_1.color = Color(0, 0, 1);
+  a.setMaterial(m_sphere_1);
+
+  Material m_sphere_2 = Material();
+  m_sphere_2.color = Color(0, 1, 1);
+  b.setMaterial(m_sphere_2);
 
   scene->addSphere(a);
   scene->addSphere(b);
@@ -186,7 +189,7 @@ int main(int argc, char **argv) {
   Material m_0 = Material();
   m_0.color = Color(0.0, 1.0, 0.0);
   s_models[0].setMaterial(m_0);
-  s_models[0].setRotation(GLVector(0, (-170 / 360) * 2 * M_PI, 0));
+  s_models[0].setRotation(GLVector(0, (170.0 / 360.0) * 2 * M_PI, 0));
   s_models[0].setTranslation(GLVector(0, -10, -30));
 
   Material m_1 = Material();

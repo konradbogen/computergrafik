@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # cmake .. --fresh
-cmake ..
+make clean
+rm -rf CMakeCache.txt CMakeFiles/
 make
+cmake .. --fresh
 ./CGPraktikum ../results/test.ppm
 open ../results/test.ppm
