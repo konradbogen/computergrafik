@@ -53,6 +53,7 @@ void SolidRenderer::computeImageRow(size_t rowNumber) {
     zeroNormal(2) = 0;
     hitRecord.normal = zeroNormal;
     if (mScene->intersect (ray, hitRecord, EPSILON)) {
+      shade(hitRecord);
       mImage->setValue (col, rowNumber, hitRecord.color);
     };
   }
@@ -62,4 +63,9 @@ void SolidRenderer::computeImageRow(size_t rowNumber) {
  *  Aufgabenblatt 4: Hier wird das raytracing implementiert. Siehe Aufgabenstellung!
  */
 void SolidRenderer::shade(HitRecord &r) {
+  if (r.triangleId != -1) {
+      r.color = mScene->getModels()[r.modelId].getMaterial().color;
+    }else if (r.sphereId != -1) {
+      r.color = mScene->getSpheres()[r.sphereId].getMaterial().color;
+    } 
 }

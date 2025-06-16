@@ -39,7 +39,6 @@ bool Scene::intersect(const Ray &ray, HitRecord &hitRecord,
       if (triangleIntersect(ray, tri, hitRecord, epsilon)) {
         hitRecord.modelId = i;
         hitRecord.triangleId = j;
-        hitRecord.color = model.getMaterial().color;
         hit = true;
       };
     }
@@ -127,7 +126,7 @@ bool Scene::triangleIntersect(const Ray &ray, const Triangle &triangle,
     return false;
   }
 
-  if (fabs(alpha + gamma + beta - 1) > epsilon) {
+  if (fabs(alpha + gamma + beta - 1.0) > epsilon) {
     return false;
   }
 
@@ -144,6 +143,7 @@ bool Scene::triangleIntersect(const Ray &ray, const Triangle &triangle,
     hitRecord.normal = triangle.normal;
     hitRecord.rayDirection = ray.direction;
     hitRecord.triangleId = 1;
+    hitRecord.sphereId = -1;
     return true;
   }
   return false;
@@ -210,9 +210,9 @@ bool Scene::sphereIntersect(const Ray &ray, const Sphere &sphere,
     hitRecord.intersectionPoint(1) = intersectionVector(1);
     hitRecord.intersectionPoint(2) = intersectionVector(2);
     hitRecord.normal = normal;
-    hitRecord.color = sphere.getMaterial().color;
     hitRecord.rayDirection = ray.direction;
     hitRecord.sphereId = 1;
+    hitRecord.triangleId = -1;
 
     return true; // Platzhalter; entfernen bei der Implementierung
   }
