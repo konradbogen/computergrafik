@@ -96,6 +96,7 @@ bool Scene::triangleIntersect(const Ray &ray, const Triangle &triangle,
   GLVector AB = vertex_1 - vertex_0; // B - A
   GLVector AC = vertex_2 - vertex_0; // C - A
   GLVector triangleNormal = crossProduct(AB, AC);
+  
   double triangleArea = triangleNormal.norm();
 
   GLVector BP = vertex_1 - s; // B - P

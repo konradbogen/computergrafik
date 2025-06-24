@@ -3,7 +3,7 @@
 // #include <tbb/tbb.h>  // Include, nur wenn TBB genutzt werden soll
 
 #define EPSILON                                                                \
-  (1e-12) // Epsilon um ungenauigkeiten und Rundungsfehler zu kompensieren
+  (1e-4) // Epsilon um ungenauigkeiten und Rundungsfehler zu kompensieren
 
 /**
  ** Erstellt mittels Raycast das Rendering der mScene in das mImage
@@ -75,21 +75,41 @@ void SolidRenderer::computeImageRow(size_t rowNumber) {
  */
 void SolidRenderer::shade(HitRecord &r) {
   if (r.triangleId != -1) {
-    float k_s    = 0.2;
-    float k_d    = 0.4;
-    float k_a    = 0.2;
-    float I_i    = 1; 
-    float I_a    = 1; 
-    GLVector& H  = r.rayDirection;
+    float k_s    = 0.2f;
+    float k_d    = 0.4f;
+    float k_a    = 0.2f;
+    float I_i    = 1.0f; 
+    float I_a    = 1.0f; 
     GLVector& N  = r.normal;
-    GLVector  L  = r.intersectionPoint - mScene->getPointLights()[0];
-    float I_r = k_s * I_i * (pow (dotProduct(N,H), 20)) + k_d * I_i * (dotProduct(L, N)) + k_a * I_a;
-    float I_g = k_s * I_i * (pow (dotProduct(N,H), 20)) + k_d * I_i * (dotProduct(L, N)) + k_a * I_a;
-    float I_b = k_s * I_i * (pow (dotProduct(N,H), 20)) + k_d * I_i * (dotProduct(L, N)) + k_a * I_a;
+    N.normalize();
+    GLVector L = mScene->getPointLights()[0] - r.intersectionPoint;
+    L.normalize();
+    GLVector V = (-1) * r.rayDirection;
+    V.normalize();
+    GLVector H = (L + V);
+    H.normalize();
+
+    float NdotL = dotProduct(N, L);
+    float NdotH = dotProduct(N, H);
+    if (NdotL < (-1) * EPSILON) {
+      NdotL = 0; //oberfläche zeigt weg von lichtquelle
+    }
+    if (NdotH < (-1) * EPSILON) {
+      NdotH = 0; //backface culling? 
+    }
+
+    float I_r = k_s * I_i * pow(NdotH, 20) + k_d * I_i * NdotL + k_a * I_a;
+    float I_g = k_s * I_i * pow(NdotH, 20) + k_d * I_i * NdotL + k_a * I_a;
+    float I_b = k_s * I_i * pow(NdotH, 20) + k_d * I_i * NdotL + k_a * I_a;
+
     Color color = mScene->getModels()[r.modelId].getMaterial().color;
     color.r = color.r * I_r;
     color.g = color.g * I_g;
     color.b = color.b * I_b;
+    if (color.r < 0.2 && color.g < 0.2 && color.b < 0.2) {
+        printf ("r: %f, g: %f, b: %f", color.r, color.g, color.b);
+        printf ("ID: %d, Betrag: %f, Normale [%f, %f, %f] \n", r.triangleId, N.norm(), N(0), N(1), N(2));
+    }
     r.color = color;
   } else if (r.sphereId != -1) {
     r.color = mScene->getSpheres()[r.sphereId].getMaterial().color;
