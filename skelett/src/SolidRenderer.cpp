@@ -75,7 +75,22 @@ void SolidRenderer::computeImageRow(size_t rowNumber) {
  */
 void SolidRenderer::shade(HitRecord &r) {
   if (r.triangleId != -1) {
-    r.color = mScene->getModels()[r.modelId].getMaterial().color;
+    float k_s    = 0.2;
+    float k_d    = 0.4;
+    float k_a    = 0.2;
+    float I_i    = 1; 
+    float I_a    = 1; 
+    GLVector& H  = r.rayDirection;
+    GLVector& N  = r.normal;
+    GLVector  L  = r.intersectionPoint - mScene->getPointLights()[0];
+    float I_r = k_s * I_i * (pow (dotProduct(N,H), 20)) + k_d * I_i * (dotProduct(L, N)) + k_a * I_a;
+    float I_g = k_s * I_i * (pow (dotProduct(N,H), 20)) + k_d * I_i * (dotProduct(L, N)) + k_a * I_a;
+    float I_b = k_s * I_i * (pow (dotProduct(N,H), 20)) + k_d * I_i * (dotProduct(L, N)) + k_a * I_a;
+    Color color = mScene->getModels()[r.modelId].getMaterial().color;
+    color.r = color.r * I_r;
+    color.g = color.g * I_g;
+    color.b = color.b * I_b;
+    r.color = color;
   } else if (r.sphereId != -1) {
     r.color = mScene->getSpheres()[r.sphereId].getMaterial().color;
   }

@@ -170,7 +170,7 @@ bool Scene::sphereIntersect(const Ray &ray, const Sphere &sphere,
 
   double r = (double)sphere.getRadius();
 
-  double a = dotProduct(v, v);
+  double a = dotProduct(v, v); //wurzel betrag = 1, brauchen es nicht wegen multiplikation
   double b = 2 * dotProduct(v, (e - m));
   double c = (dotProduct((e - m), (e - m)) - r * r);
 
@@ -182,14 +182,14 @@ bool Scene::sphereIntersect(const Ray &ray, const Sphere &sphere,
   double z_m = (-1) * b - sqrt(discr);
 
   double t_1 = z_p / (2 * a);
-  double t_2 = z_m / (2 * a);
+  double t_2 = z_m / (2 * a); //wurzel diskr. immer positiv, t2 ist immer keliner
 
   double t = -1.0;
-  if (t_1 > epsilon && t_2 > epsilon)
+  if (t_1 > epsilon && t_2 > epsilon) //s.o., t_2 immer kleiner
     t = std::min(t_1, t_2);
   else if (t_1 > epsilon)
     t = t_1;
-  else if (t_2 > epsilon)
+  else if (t_2 > epsilon) //reihenfolge, abn anfang, ersten weg
     t = t_2;
   else
     return false;
@@ -202,7 +202,7 @@ bool Scene::sphereIntersect(const Ray &ray, const Sphere &sphere,
 
   if ((hitRecord.sphereId < 0 && hitRecord.triangleId < 0) ||
       (hitRecord.intersectionPoint - ray.origin).norm() >
-          (s_p - ray.origin).norm()) {
+          (s_p - ray.origin).norm()) { //zweite norm ist t, erste param. im hitrecord
     hitRecord.intersectionPoint(0) = intersectionVector(0);
     hitRecord.intersectionPoint(1) = intersectionVector(1);
     hitRecord.intersectionPoint(2) = intersectionVector(2);

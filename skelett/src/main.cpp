@@ -27,12 +27,12 @@ int main(int argc, char **argv) {
 
   // Verwendete Modelle festlegen
   std::vector<std::string> path_vector;
-  path_vector.push_back(std::string("../data/bunny/bunny_scaled.ply"));
+  //path_vector.push_back(std::string("../data/bunny/bunny_scaled.ply"));
 
   path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
-  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
-  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
-  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+  //path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+  //path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+  //path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
 
   // Erzeuge die Szene mit dem default Konstruktor und lade die Modelle
   auto scene = std::make_shared<Scene>();
@@ -192,7 +192,7 @@ int main(int argc, char **argv) {
   s_models[0].setRotation(GLVector(0, (170.0 / 360.0) * 2 * M_PI, 0));
   s_models[0].setTranslation(GLVector(0, -10, -30));
 
-  Material m_1 = Material();
+ /*  Material m_1 = Material();
   m_1.color = Color(0.9, 0.9, 0.3);
   s_models[1].setTranslation(GLVector(-60, -50, -0));
   s_models[1].setMaterial(m_1);
@@ -211,10 +211,9 @@ int main(int argc, char **argv) {
   m_4.color = Color(0.9, 0.9, 0.9);
   s_models[4].setTranslation(GLVector(0, -100, 0));
   s_models[4].setScale(GLVector(500, 0.01, 500));
-  s_models[4].setMaterial(m_4);
+  s_models[4].setMaterial(m_4); */
 
-  SolidRenderer solidRenderer = SolidRenderer(scene, img, cam);
-  solidRenderer.renderRaycast();
+
 
   /* Aufgabenblatt 4: Setzen Sie materialeigenschaften für die Kugelen und die
    * odelle. Die Materialeigenschaften für eine Darstellung entsprechend der B
@@ -228,9 +227,18 @@ int main(int argc, char **argv) {
   /* Stelle materialeigenschaften zur verfügung (Relevant für Aufgabenblatt 4)*/
 
   /* Aufgabenblatt 4  Fügen Sie ein Licht zur Szene hinzu */
+  
+  GLPoint light;
+  light (0) = 0;
+  light (1) = 0;
+  light (2) = 200;
+  scene->addPointLight (light);
 
   /* Aufgabenblatt 3: erzeugen Sie einen SolidRenderer (vorzugsweise mir einem
    * shared_ptr) und rufen sie die Funktion renderRaycast auf */
+  
+   SolidRenderer solidRenderer = SolidRenderer(scene, img, cam);
+  solidRenderer.renderRaycast();
 
   // Schreiben des Bildes in Datei
   if (argc > 1) {
