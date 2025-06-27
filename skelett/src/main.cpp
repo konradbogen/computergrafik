@@ -27,8 +27,8 @@ int main(int argc, char **argv) {
 
   // Verwendete Modelle festlegen
   std::vector<std::string> path_vector;
-  //path_vector.push_back(std::string("../data/bunny/bunny_scaled.ply"));
-  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+  path_vector.push_back(std::string("../data/bunny/bunny_scaled.ply"));
+  //path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
   path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
   path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
   path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
@@ -167,7 +167,7 @@ int main(int argc, char **argv) {
   /* Aufgabenblatt 3: Erzeugen Sie mindestens eine Kugel und fügen Sie diese zur
    * zene hinzu*/
   Sphere a = Sphere();
-  a.setPosition(GLPoint(-150.0, 0.0, -30.0));
+  a.setPosition(GLPoint(-150.0, 100.0, -30.0));
   a.setRadius(50.0);
 
   Sphere b = Sphere();
@@ -189,14 +189,18 @@ int main(int argc, char **argv) {
 
   std::vector<Model> &s_models = scene->getModels();
 
+
+  //hase
   Material m_0 = Material();
   m_0.color = Color(0.0, 0.0, 0.0);
   m_0.reflection = 1.0;
   s_models[0].setMaterial(m_0);
-  s_models[0].setRotation(GLVector(1, (170.0 / 360.0) * 2 * M_PI, 2));
+  s_models[0].setRotation(GLVector(0, (170.0 / 360.0) * 2 * M_PI, 0));
   s_models[0].setTranslation(GLVector(0, -10, -30));
   
 
+
+  //würfel
   Material m_1 = Material();
   m_1.color = Color(0.9, 0.9, 0.3);
   s_models[1].setTranslation(GLVector(-60, -50, -0));
@@ -218,6 +222,8 @@ int main(int argc, char **argv) {
   s_models[4].setScale(GLVector(500, 0.01, 500));
   s_models[4].setMaterial(m_4); 
 
+
+  //raum
   Material m_5 = Material();
   m_5.color = Color(0.99, 0.99, 0.99);
   s_models[5].setMaterial(m_5);
