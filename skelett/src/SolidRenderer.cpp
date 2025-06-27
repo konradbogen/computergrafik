@@ -78,14 +78,12 @@ void SolidRenderer::shade(HitRecord &r) {
   Color color;
   if (r.triangleId != -1) {
     color = mScene->getModels()[r.modelId].getMaterial().color;
-    r.color = color;
     shade = true;
   } else if (r.sphereId != -1) {
     Sphere& sphere = mScene->getSpheres()[r.sphereId];
     color = sphere.getMaterial().color;
-    r.normal = sphere.getPosition () - r.intersectionPoint;
+    r.normal = r.intersectionPoint- sphere.getPosition ();
     r.normal.normalize ();
-    r.color = color;
     shade = true;
   }
   if (shade) {
@@ -123,6 +121,7 @@ void SolidRenderer::shade(HitRecord &r) {
         printf ("r: %f, g: %f, b: %f", color.r, color.g, color.b);
         printf ("ID: %d, Betrag: %f, Normale [%f, %f, %f] \n", r.triangleId, N.norm(), N(0), N(1), N(2));
     }
+    r.color = color;
   }
   
 }
