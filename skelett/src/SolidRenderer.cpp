@@ -74,8 +74,22 @@ void SolidRenderer::computeImageRow(size_t rowNumber) {
  * Aufgabenstellung!
  */
 void SolidRenderer::shade(HitRecord &r) {
+  bool shade = false;
+  Color color;
   if (r.triangleId != -1) {
-    float k_s    = 0.2f;
+    color = mScene->getModels()[r.modelId].getMaterial().color;
+    r.color = color;
+    shade = true;
+  } else if (r.sphereId != -1) {
+    Sphere& sphere = mScene->getSpheres()[r.sphereId];
+    color = sphere.getMaterial().color;
+    r.normal = sphere.getPosition () - r.intersectionPoint;
+    r.normal.normalize ();
+    r.color = color;
+    shade = true;
+  }
+  if (shade) {
+      float k_s    = 0.2f;
     float k_d    = 0.4f;
     float k_a    = 0.2f;
     float I_i    = 1.0f; 
@@ -102,7 +116,6 @@ void SolidRenderer::shade(HitRecord &r) {
     float I_g = k_s * I_i * pow(NdotH, 20) + k_d * I_i * NdotL + k_a * I_a;
     float I_b = k_s * I_i * pow(NdotH, 20) + k_d * I_i * NdotL + k_a * I_a;
 
-    Color color = mScene->getModels()[r.modelId].getMaterial().color;
     color.r = color.r * I_r;
     color.g = color.g * I_g;
     color.b = color.b * I_b;
@@ -110,8 +123,6 @@ void SolidRenderer::shade(HitRecord &r) {
         printf ("r: %f, g: %f, b: %f", color.r, color.g, color.b);
         printf ("ID: %d, Betrag: %f, Normale [%f, %f, %f] \n", r.triangleId, N.norm(), N(0), N(1), N(2));
     }
-    r.color = color;
-  } else if (r.sphereId != -1) {
-    r.color = mScene->getSpheres()[r.sphereId].getMaterial().color;
   }
+  
 }
