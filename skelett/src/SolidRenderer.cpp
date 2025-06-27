@@ -5,6 +5,8 @@
 #define EPSILON                                                                \
   (1e-4) // Epsilon um ungenauigkeiten und Rundungsfehler zu kompensieren
 
+
+int MAX_RECURSION = 2;
 /**
  ** Erstellt mittels Raycast das Rendering der mScene in das mImage
  ** Precondition: Sowohl mImage, mScene, mCamera müssen gesetzt sein.
@@ -75,18 +77,40 @@ void SolidRenderer::computeImageRow(size_t rowNumber) {
  */
 void SolidRenderer::shade(HitRecord &r) {
   bool shade = false;
+  bool reflection = 0;
   Color color;
   if (r.triangleId != -1) {
     color = mScene->getModels()[r.modelId].getMaterial().color;
+    reflection = mScene->getModels()[r.modelId].getMaterial().reflection;
     shade = true;
   } else if (r.sphereId != -1) {
     Sphere& sphere = mScene->getSpheres()[r.sphereId];
     color = sphere.getMaterial().color;
+    reflection = sphere.getMaterial().reflection;
     r.normal = r.intersectionPoint- sphere.getPosition ();
     r.normal.normalize ();
     shade = true;
   }
   if (shade) {
+
+    r.rayDirection.normalize ();
+    r.normal.normalize ();
+    if (r.recursions < MAX_RECURSION && reflection > 0.0) {
+      Ray r_r;
+      r_r.direction = r.rayDirection - 2 * dotProduct(r.rayDirection, r.normal) * r.normal;
+      r_r.origin = r.intersectionPoint + EPSILON * r.normal;
+      r.modelId = -1;
+      r.sphereId = -1;
+      r.parameter = 0;
+      r.recursions += 1;
+      r.rayDirection = r_r.direction;
+      if (mScene->intersect(r_r, r, EPSILON)) {
+        this->shade (r);
+      }
+      return;
+    }
+
+
     float k_s    = 0.2f;
     float k_d    = 0.4f;
     float k_a    = 0.2f;
@@ -130,6 +154,7 @@ void SolidRenderer::shade(HitRecord &r) {
       color.g = color.g * k_a * I_a;
       color.b = color.b * k_a * I_a;
     };
+
     r.color = color;
   }
   

@@ -175,11 +175,13 @@ int main(int argc, char **argv) {
   b.setRadius(50.0);
 
   Material m_sphere_1 = Material();
-  m_sphere_1.color = Color(0, 0, 1);
+  m_sphere_1.color = Color(0, 0, 0);
+  m_sphere_1.reflection = 1.0;
   a.setMaterial(m_sphere_1);
 
   Material m_sphere_2 = Material();
-  m_sphere_2.color = Color(0, 1, 1);
+  m_sphere_2.color = Color(0, 0, 0);
+  m_sphere_2.reflection = 1.0;
   b.setMaterial(m_sphere_2);
 
   scene->addSphere(a);
@@ -188,7 +190,8 @@ int main(int argc, char **argv) {
   std::vector<Model> &s_models = scene->getModels();
 
   Material m_0 = Material();
-  m_0.color = Color(0.0, 1.0, 0.0);
+  m_0.color = Color(0.0, 0.0, 0.0);
+  m_0.reflection = 1.0;
   s_models[0].setMaterial(m_0);
   s_models[0].setRotation(GLVector(1, (170.0 / 360.0) * 2 * M_PI, 2));
   s_models[0].setTranslation(GLVector(0, -10, -30));
@@ -220,8 +223,6 @@ int main(int argc, char **argv) {
   s_models[5].setMaterial(m_5);
   s_models[5].setTranslation(GLVector(0, -100, 0));
   s_models[5].setScale(GLVector(-500, -500, -500));
-  printf ("Normale: [%f %f %f] \n", s_models[5].mTriangles[0].normal(0), s_models[5].mTriangles[0].normal(2), s_models[5].mTriangles[0].normal(3));
-  printf ("Punkt: [%f %f %f] \n", s_models[5].mTriangles[0].vertex[0](0), s_models[5].mTriangles[0].vertex[0](1), s_models[5].mTriangles[0].vertex[0](2));
 
 
 
