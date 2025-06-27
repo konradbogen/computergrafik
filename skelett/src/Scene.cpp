@@ -130,15 +130,14 @@ bool Scene::triangleIntersect(const Ray &ray, const Triangle &triangle,
 
   // Check if point is inside triangle
   // float diff = fabs(alphaArea + betaArea + gammaArea - triangleArea);
-  if ((hitRecord.sphereId < 0 && hitRecord.triangleId < 0) ||
-      (hitRecord.intersectionPoint - ray.origin).norm() >
-          (s_p - ray.origin).norm()) {
+  if (t > epsilon && t < hitRecord.parameter || hitRecord.parameter == 0) {
     // printf("alpha: %.4f beta: %.4f gamma: %.4f | triangle: %.4f \n",
     // alphaArea, betaArea, gammaArea, triangleArea);
     hitRecord.intersectionPoint(0) = s(0);
     hitRecord.intersectionPoint(1) = s(1);
     hitRecord.intersectionPoint(2) = s(2);
     hitRecord.normal = triangle.normal;
+    hitRecord.parameter = t;
     hitRecord.rayDirection = ray.direction;
     hitRecord.triangleId = 1;
     hitRecord.sphereId = -1;
@@ -201,15 +200,14 @@ bool Scene::sphereIntersect(const Ray &ray, const Sphere &sphere,
   GLVector normal = intersectionVector - m;
   normal.normalize();
 
-  if ((hitRecord.sphereId < 0 && hitRecord.triangleId < 0) ||
-      (hitRecord.intersectionPoint - ray.origin).norm() >
-          (s_p - ray.origin).norm()) { //zweite norm ist t, erste param. im hitrecord
+  if (t > epsilon && t < hitRecord.parameter || hitRecord.parameter == 0) { //zweite norm ist t, erste param. im hitrecord
     hitRecord.intersectionPoint(0) = intersectionVector(0);
     hitRecord.intersectionPoint(1) = intersectionVector(1);
     hitRecord.intersectionPoint(2) = intersectionVector(2);
     hitRecord.normal = normal;
     hitRecord.rayDirection = ray.direction;
     hitRecord.sphereId = 1;
+    hitRecord.parameter = t;
     hitRecord.triangleId = -1;
 
     return true; // Platzhalter; entfernen bei der Implementierung

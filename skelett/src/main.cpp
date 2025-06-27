@@ -28,11 +28,12 @@ int main(int argc, char **argv) {
   // Verwendete Modelle festlegen
   std::vector<std::string> path_vector;
   //path_vector.push_back(std::string("../data/bunny/bunny_scaled.ply"));
-
   path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
-  //path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
-  //path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
-  //path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
+  path_vector.push_back(std::string("../data/basicObjects/cube_scaled.ply"));
 
   // Erzeuge die Szene mit dem default Konstruktor und lade die Modelle
   auto scene = std::make_shared<Scene>();
@@ -191,8 +192,9 @@ int main(int argc, char **argv) {
   s_models[0].setMaterial(m_0);
   s_models[0].setRotation(GLVector(1, (170.0 / 360.0) * 2 * M_PI, 2));
   s_models[0].setTranslation(GLVector(0, -10, -30));
+  
 
- /*  Material m_1 = Material();
+  Material m_1 = Material();
   m_1.color = Color(0.9, 0.9, 0.3);
   s_models[1].setTranslation(GLVector(-60, -50, -0));
   s_models[1].setMaterial(m_1);
@@ -211,7 +213,15 @@ int main(int argc, char **argv) {
   m_4.color = Color(0.9, 0.9, 0.9);
   s_models[4].setTranslation(GLVector(0, -100, 0));
   s_models[4].setScale(GLVector(500, 0.01, 500));
-  s_models[4].setMaterial(m_4); */
+  s_models[4].setMaterial(m_4); 
+
+  Material m_5 = Material();
+  m_5.color = Color(0.99, 0.99, 0.99);
+  s_models[5].setMaterial(m_5);
+  s_models[5].setTranslation(GLVector(0, -100, 0));
+  s_models[5].setScale(GLVector(-500, -500, -500));
+  printf ("Normale: [%f %f %f] \n", s_models[5].mTriangles[0].normal(0), s_models[5].mTriangles[0].normal(2), s_models[5].mTriangles[0].normal(3));
+  printf ("Punkt: [%f %f %f] \n", s_models[5].mTriangles[0].vertex[0](0), s_models[5].mTriangles[0].vertex[0](1), s_models[5].mTriangles[0].vertex[0](2));
 
 
 
@@ -230,7 +240,7 @@ int main(int argc, char **argv) {
   
   GLPoint light;
   light (0) = 0;
-  light (1) = 0;
+  light (1) = 100;
   light (2) = 200;
   scene->addPointLight (light);
 

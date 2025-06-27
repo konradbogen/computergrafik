@@ -87,7 +87,7 @@ void SolidRenderer::shade(HitRecord &r) {
     shade = true;
   }
   if (shade) {
-      float k_s    = 0.2f;
+    float k_s    = 0.2f;
     float k_d    = 0.4f;
     float k_a    = 0.2f;
     float I_i    = 1.0f; 
@@ -117,10 +117,19 @@ void SolidRenderer::shade(HitRecord &r) {
     color.r = color.r * I_r;
     color.g = color.g * I_g;
     color.b = color.b * I_b;
-    if (color.r < 0.2 && color.g < 0.2 && color.b < 0.2) {
-        printf ("r: %f, g: %f, b: %f", color.r, color.g, color.b);
-        printf ("ID: %d, Betrag: %f, Normale [%f, %f, %f] \n", r.triangleId, N.norm(), N(0), N(1), N(2));
-    }
+   
+    HitRecord h_s = HitRecord ();
+    Ray r_s = Ray ();
+    r_s.direction = mScene->getPointLights()[0] - r.intersectionPoint ;
+    r_s.direction.normalize ();
+    r_s.origin = r.intersectionPoint + EPSILON * r.normal;
+    h_s.rayDirection = r_s.direction;
+    h_s.parameter = (mScene->getPointLights()[0] - r.intersectionPoint).norm ();
+    if (mScene->intersect (r_s, h_s, EPSILON)) {
+      color.r = color.r * k_a * I_a; // Only ambient light if in shadow
+      color.g = color.g * k_a * I_a;
+      color.b = color.b * k_a * I_a;
+    };
     r.color = color;
   }
   
