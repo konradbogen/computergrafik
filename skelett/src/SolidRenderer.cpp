@@ -111,20 +111,22 @@ void SolidRenderer::shade(HitRecord &r) {
     }
 
 
-    float k_s    = 0.2f;
-    float k_d    = 0.4f;
-    float k_a    = 0.2f;
-    float I_i    = 1.0f; 
-    float I_a    = 1.0f; 
-    GLVector& N  = r.normal;
+    float k_s    = 0.2f; //specular
+    float k_d    = 0.4f; //diffuse
+    float k_a    = 0.2f; //ambient
+    float I_i    = 1.0f; //intensität punktlicht
+    float I_a    = 1.0f; //intensität ambient
+    GLVector& N  = r.normal; //oberflächennormale
     N.normalize();
-    GLVector L = mScene->getPointLights()[0] - r.intersectionPoint;
+    GLVector L = mScene->getPointLights()[0] - r.intersectionPoint; //lichtstrahl
     L.normalize();
-    GLVector V = (-1) * r.rayDirection;
+    GLVector V = (-1) * r.rayDirection; //strahl zur kamera
     V.normalize();
-    GLVector H = (L + V);
+    GLVector H = (L + V); //kamera zum licht
     H.normalize();
-
+    GLVector R = r.rayDirection - 2 * dotProduct(r.rayDirection, r.normal) * r.normal;
+    R.normalize ();
+    float RdotV = dotProduct (R, V);
     float NdotL = dotProduct(N, L);
     float NdotH = dotProduct(N, H);
     if (NdotL < (-1) * EPSILON) {
@@ -133,7 +135,7 @@ void SolidRenderer::shade(HitRecord &r) {
     if (NdotH < (-1) * EPSILON) {
       NdotH = 0; //backface culling? 
     }
-
+    //NdotH oder RdotV?
     float I_r = k_s * I_i * pow(NdotH, 20) + k_d * I_i * NdotL + k_a * I_a;
     float I_g = k_s * I_i * pow(NdotH, 20) + k_d * I_i * NdotL + k_a * I_a;
     float I_b = k_s * I_i * pow(NdotH, 20) + k_d * I_i * NdotL + k_a * I_a;
@@ -150,9 +152,9 @@ void SolidRenderer::shade(HitRecord &r) {
     h_s.rayDirection = r_s.direction;
     h_s.parameter = (mScene->getPointLights()[0] - r.intersectionPoint).norm ();
     if (mScene->intersect (r_s, h_s, EPSILON)) {
-      color.r = color.r * k_a * I_a; // Only ambient light if in shadow
-      color.g = color.g * k_a * I_a;
-      color.b = color.b * k_a * I_a;
+      color.r = color.r * 0.5 * I_a; // Only ambient light if in shadow
+      color.g = color.g * 0.5 * I_a;
+      color.b = color.b * 0.5 * I_a;
     };
 
     r.color = color;

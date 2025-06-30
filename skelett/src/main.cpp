@@ -155,7 +155,7 @@ int main(int argc, char **argv) {
    * erzeugen und zur Scene hinzufügen*/
 
   auto cam = std::make_shared<Camera>();
-  GLPoint eye = GLPoint(0.0, 0.0, 200.0);
+  GLPoint eye = GLPoint(0.0, 0.0, 250.0);
   cam->setEyePoint(eye);
   cam->setUp(GLVector(0.0, 1.0, 0.0));
   GLVector viewDirection = GLVector(0.0, 0, -1.0);
@@ -246,8 +246,8 @@ int main(int argc, char **argv) {
   /* Aufgabenblatt 4  Fügen Sie ein Licht zur Szene hinzu */
   
   GLPoint light;
-  light (0) = 0;
-  light (1) = 100;
+  light (0) = -300;
+  light (1) = 200;
   light (2) = 200;
   scene->addPointLight (light);
 
