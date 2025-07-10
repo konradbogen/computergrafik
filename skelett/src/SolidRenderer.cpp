@@ -124,7 +124,9 @@ void SolidRenderer::shade(HitRecord &r) {
     V.normalize();
     GLVector H = (L + V); //kamera zum licht
     H.normalize();
-    GLVector R = r.rayDirection - 2 * dotProduct(r.rayDirection, r.normal) * r.normal;
+    GLVector R = (-1) * L - 2 * dotProduct((-1) * L, r.normal) * r.normal; //statt raydirection licht richtung zum punkt
+    
+
     R.normalize ();
     float RdotV = dotProduct (R, V);
     float NdotL = dotProduct(N, L);
@@ -135,10 +137,10 @@ void SolidRenderer::shade(HitRecord &r) {
     if (NdotH < (-1) * EPSILON) {
       NdotH = 0; //backface culling? 
     }
-    //NdotH oder RdotV?
-    float I_r = k_s * I_i * pow(NdotH, 20) + k_d * I_i * NdotL + k_a * I_a;
-    float I_g = k_s * I_i * pow(NdotH, 20) + k_d * I_i * NdotL + k_a * I_a;
-    float I_b = k_s * I_i * pow(NdotH, 20) + k_d * I_i * NdotL + k_a * I_a;
+    //NdotH oder RdotV? lichtstrahl reflektion licht zum schnittpunkt reflektiert
+    float I_r = k_s * I_i * pow(RdotV, 20) + k_d * I_i * NdotL + k_a * I_a;
+    float I_g = k_s * I_i * pow(RdotV, 20) + k_d * I_i * NdotL + k_a * I_a;
+    float I_b = k_s * I_i * pow(RdotV, 20) + k_d * I_i * NdotL + k_a * I_a;
 
     color.r = color.r * I_r;
     color.g = color.g * I_g;

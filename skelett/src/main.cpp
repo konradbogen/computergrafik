@@ -23,7 +23,7 @@
 
 int main(int argc, char **argv) {
   // Dimensionen des Ergebnisbildes im Konstruktor setzen
-  std::shared_ptr<Image> img = std::make_shared<Image>(640, 480);
+  std::shared_ptr<Image> img = std::make_shared<Image>(200, 150);
 
   // Verwendete Modelle festlegen
   std::vector<std::string> path_vector;
